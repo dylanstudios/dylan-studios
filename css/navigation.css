@@ -1,0 +1,183 @@
+/* =========================================================
+   NAVIGATION BAR
+========================================================= */
+
+nav {
+    width: 100%;
+    max-width: 1590px;
+    height: 70px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 34px;
+
+    background: #FFFFFF;
+
+    border: 1px solid rgba(229, 231, 235, 0.7);
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 30px rgba(17, 24, 39, 0.08);
+}
+
+
+/* =========================================================
+   NAVIGATION LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #0097B2;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+
+    display: block;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 38px;
+
+    margin-left: auto;
+}
+
+.nav-links a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    height: 86px;
+
+    padding: 0;
+
+    text-decoration: none;
+
+    color: #111827;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition: color 0.25s ease;
+}
+
+
+/* =========================================================
+   NAVIGATION LINK HOVER
+========================================================= */
+
+.nav-links a:hover {
+    color: #0097B2;
+}
+
+
+/* =========================================================
+   ACTIVE NAVIGATION LINK
+========================================================= */
+
+.nav-links a.active {
+    color: #0097B2;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   ACTIVE NAVIGATION UNDERLINE
+========================================================= */
+
+.nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 18px;
+
+    width: 100%;
+    height: 3px;
+
+    margin: auto;
+
+    background: #0097B2;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   START A PROJECT NAVIGATION BUTTON
+========================================================= */
+
+.start-project {
+    height: auto !important;
+
+    margin-left: 12px;
+
+    padding: 15px 22px !important;
+
+    background: #FFCA6B;
+
+    color: #111827 !important;
+
+    border-radius: 9px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   START A PROJECT HOVER
+========================================================= */
+
+.start-project:hover {
+    background: linear-gradient(90deg,
+            #FF79B3,
+            #FFCA6B);
+
+    color: #ffffff !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(255, 121, 179, 0.25);
+}
+
+
+/* =========================================================
+   REMOVE ACTIVE UNDERLINE FROM START PROJECT
+========================================================= */
+
+.nav-links a.start-project::after {
+    display: none;
+}

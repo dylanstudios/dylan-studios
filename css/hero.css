@@ -1,0 +1,1088 @@
+/* =========================================================
+   DYLAN STUDIO
+   HERO SECTION
+========================================================= */
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: 100%;
+    min-height: 480px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+    padding: 10px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+.hero-content {
+    width: 50%;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    width: 50%;
+    height: 380px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+}
+
+/* =========================================================
+   HERO LABEL
+========================================================= */
+
+.hero-label {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 14px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: black;
+
+    background: #FAD02C;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 15px rgba(17, 24, 39, 0.12);
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.hero h1 {
+    font-family: "Cinzel", serif;
+
+    margin: 0;
+
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   BLUE TEXT
+========================================================= */
+
+.blue-text {
+    color: #0097B2;
+}
+
+
+/* =========================================================
+   GRADIENT TEXT
+========================================================= */
+
+.gradient-text {
+    background: linear-gradient(90deg,
+            #FF79B3,
+            #FF9F92,
+            #FFCA6B);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+
+
+/* =========================================================
+   HERO DECORATIVE LINES
+========================================================= */
+
+.hero-lines {
+    display: flex;
+
+    gap: 20px;
+
+    margin: 22px 0;
+}
+
+
+.hero-lines span {
+    display: block;
+
+    height: 5px;
+
+    border-radius: 10px;
+}
+
+
+.hero-lines span:first-child {
+    width: 48px;
+
+    background: #0097B2;
+}
+
+
+.hero-lines span:last-child {
+    width: 45px;
+
+    background: #FAD02C;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero-description {
+    max-width: 600px;
+
+    margin-bottom: 10px;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   GENERAL HERO BUTTON
+========================================================= */
+
+.hero-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0 25px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        0.3s ease;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primary-btn {
+    background: #F2B900;
+
+    color: black;
+}
+
+
+.primary-btn span {
+    margin-left: 15px;
+
+    font-size: 17px;
+}
+
+
+.primary-btn:hover {
+    background: linear-gradient(90deg,
+            #FF79B3,
+            #FFCA6B);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.secondary-btn {
+    background: #ffffff;
+
+    color: #0097B2;
+
+    border: 1px solid #0097B2;
+}
+
+
+.secondary-btn:hover {
+    background: #0097B2;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO LOGO
+========================================================= */
+
+.hero-logo {
+    width: 95%;
+
+    height: 95%;
+
+    display: block;
+
+    object-fit: contain;
+
+    transform: translateX(-15px);
+
+    filter:
+        drop-shadow(0 16px 16px rgba(17, 24, 39, 0.18));
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.service-card {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 150px;
+
+    padding: 13px 18px;
+
+    background: #FFF4B8;
+
+    border: 1px solid #FAD02C;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 25px rgba(17, 24, 39, 0.10);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 10;
+
+    --mouse-x: 0px;
+    --mouse-y: 0px;
+    --hover-scale: 1;
+
+    transform:
+        translate(var(--mouse-x),
+            var(--mouse-y)) scale(var(--hover-scale));
+
+    transition:
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        border 0.25s ease,
+        transform 0.25s ease;
+
+    will-change: transform;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SERVICE ICON
+========================================================= */
+
+.service-icon {
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: #FFE45C;
+
+    color: black;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   SERVICE TEXT
+========================================================= */
+
+.service-text strong {
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.35;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   SERVICE CARD POSITIONS
+========================================================= */
+
+.brand-card {
+    top: 5%;
+
+    left: -3%;
+}
+
+
+.web-card {
+    top: 17%;
+
+    right: -5%;
+}
+
+
+.visual-card {
+    bottom: 17%;
+
+    left: -6%;
+}
+
+
+.creative-card {
+    bottom: 7%;
+
+    right: -4%;
+}
+
+
+/* =========================================================
+   CARD HOVER / HIGHLIGHT
+========================================================= */
+
+.service-card:hover {
+    --hover-scale: 1.06;
+
+    background: rgba(255, 255, 255, 1);
+
+    border-color:
+        rgba(0, 151, 178, 0.25);
+
+    box-shadow:
+        0 18px 45px rgba(17, 24, 39, 0.18),
+        0 0 0 3px rgba(0, 151, 178, 0.06);
+
+    z-index: 50;
+}
+
+
+.service-card:hover .service-icon {
+    background: #0097B2;
+
+    color: #ffffff;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   SERVICE CARD FLOATING ANIMATIONS
+========================================================= */
+
+/* Brand Identity */
+
+.brand-card {
+    top: 5%;
+    left: -3%;
+
+    animation:
+        brandFloat 4s ease-in-out infinite;
+}
+
+
+/* Web Development */
+
+.web-card {
+    top: 17%;
+    right: 2%;
+
+    animation:
+        webFloat 4.5s ease-in-out infinite;
+}
+
+
+/* Visual Communication */
+
+.visual-card {
+    bottom: 17%;
+    left: -6%;
+
+    animation:
+        visualFloat 5s ease-in-out infinite;
+}
+
+
+/* Creative Design */
+
+.creative-card {
+    bottom: 7%;
+    right: 3%;
+
+    animation:
+        creativeFloat 4.2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   FLOAT KEYFRAMES
+========================================================= */
+
+@keyframes brandFloat {
+
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -6px;
+    }
+}
+
+
+@keyframes webFloat {
+
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: 7px;
+    }
+}
+
+
+@keyframes visualFloat {
+
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -7px;
+    }
+}
+
+
+@keyframes creativeFloat {
+
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: 6px;
+    }
+}
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.hero-stats {
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   OUR NUMBERS
+========================================================= */
+
+.stats-heading {
+    margin-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+    color: #111827;
+}
+
+
+/* =========================================================
+   STATS ROW
+========================================================= */
+
+.stats-row {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   STAT ITEM
+========================================================= */
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 90px;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.stat-item strong {
+    font-family: "Cinzel", serif;
+
+    font-size: 50px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.stat-item span {
+    margin-top: 7px;
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-stat strong {
+    color: #0097B2;
+}
+
+
+/* =========================================================
+   DOMAINS
+========================================================= */
+
+.domains-stat strong {
+    color: #F2B900;
+}
+
+
+/* =========================================================
+   PASSION
+========================================================= */
+
+.passion-stat strong {
+    color: #FF79B3;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+
+    background: #ffffff;
+}
+
+/* =========================================================
+   HERO PROCESS / PHILOSOPHY
+========================================================= */
+
+.hero-process {
+    position: absolute;
+
+    right: 0;
+    bottom: 10px;
+
+    width: 390px;
+
+    z-index: 5;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   PROCESS WORDS
+========================================================= */
+
+.process-words {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    white-space: nowrap;
+}
+
+.process-words span {
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    font-style: italic;
+
+    letter-spacing: 0.8px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PROCESS SEPARATOR
+========================================================= */
+
+.process-words b {
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   PROCESS COLOURED LINE
+========================================================= */
+
+.process-line {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 14px;
+}
+
+.process-line span {
+    display: block;
+
+    width: 105px;
+    height: 5px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(90deg,
+            #FF79B3,
+            #FFCA6B);
+
+    box-shadow:
+        0 3px 10px rgba(0, 151, 178, 0.18);
+}
+
+/* =========================================================
+   SCROLL INDICATOR — BELOW HERO
+========================================================= */
+
+.hero-scroll-indicator {
+    width: 100%;
+    height: 55px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    font-family: "Cinzel", serif;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    color: #5f6368;
+
+    opacity: 1;
+
+    position: relative;
+    z-index: 50;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* Arrow */
+
+.hero-scroll-indicator .scroll-arrow {
+    display: block;
+
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    line-height: 18px;
+
+    color: #0097B2;
+
+    animation: scrollBounce 1.8s ease-in-out infinite;
+}
+
+
+/* Animation */
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(5px);
+        opacity: 1;
+    }
+}
+
+
+/* Hide after scrolling */
+
+.hero-scroll-indicator.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.studio-marquee {
+    width: 100%;
+}
+
+/* =========================================================
+   DYLAN STUDIO
+   LARGE SINGLE MARQUEE
+========================================================= */
+
+.studio-marquee {
+    width: 100%;
+    overflow: hidden;
+
+    padding: 28px 0;
+
+    box-sizing: border-box;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   MARQUEE ROW
+========================================================= */
+
+.marquee-row {
+    width: 100%;
+    overflow: hidden;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MOVING TRACK
+========================================================= */
+
+.marquee-track {
+    display: flex;
+
+    width: max-content;
+
+    will-change: transform;
+
+    animation: marqueeLeft 30s linear infinite;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.marquee-content {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: 35px;
+
+    padding-right: 35px;
+
+    white-space: nowrap;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.marquee-content span {
+    display: inline-block;
+}
+
+
+/* =========================================================
+   TEXT COLORS
+========================================================= */
+
+/* 1 — RED */
+
+.marquee-content span:nth-of-type(1) {
+    color: #F2B900;
+}
+
+
+/* 2 — BLUE */
+
+.marquee-content span:nth-of-type(2) {
+    color: #0097B2;
+}
+
+
+/* 3 — PINK */
+
+.marquee-content span:nth-of-type(3) {
+    color: #FF79B3;
+}
+
+
+/* 4 — RED */
+
+.marquee-content span:nth-of-type(4) {
+    color: #F2B900;
+}
+
+
+/* 5 — BLUE */
+
+.marquee-content span:nth-of-type(5) {
+    color: #0097B2;
+}
+
+
+/* 6 — PINK */
+
+.marquee-content span:nth-of-type(6) {
+    color: #FF79B3;
+}
+
+
+/* 7 — RED */
+
+.marquee-content span:nth-of-type(7) {
+    color: #F2B900;
+}
+
+
+/* 8 — BLUE */
+
+.marquee-content span:nth-of-type(8) {
+    color: #0097B2;
+}
+
+
+/* =========================================================
+   GOOGLE MATERIAL ICONS
+========================================================= */
+
+.marquee-content .material-symbols-outlined {
+
+    color: #FFFFFF;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    flex-shrink: 0;
+
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+}
+
+
+/* =========================================================
+   SEPARATOR ICON
+========================================================= */
+
+.marquee-content b {
+
+    color: #FFFFFF;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   MARQUEE ANIMATION
+========================================================= */
+
+@keyframes marqueeLeft {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.studio-marquee:hover .marquee-track {
+
+    animation-play-state: paused;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .studio-marquee {
+
+        padding: 20px 0;
+
+    }
+
+    .marquee-content {
+
+        font-size: 16px;
+
+        letter-spacing: 2px;
+
+        gap: 20px;
+
+        padding-right: 20px;
+
+    }
+
+    .marquee-content .material-symbols-outlined {
+
+        font-size: 20px;
+
+    }
+
+    .marquee-content b {
+
+        font-size: 16px;
+
+    }
+
+}
