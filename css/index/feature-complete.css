@@ -7,16 +7,26 @@
     width: 100%;
     height: 100vh;
 
-    background: #151515;
-    color: white;
+    /* Background */
+    background-color: #EEF1F4;
+    background-image: url("../../images/index/index_featured.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Text color */
+    color: #ffffff;
 
     /* Start outside the screen on the LEFT */
-    transform: translateX(-100%);
+    transform: translate3d(-100%, 0, 0);
 
+    /* Layer above main */
     z-index: 20;
 
+    /* Prevent horizontal overflow */
     overflow: hidden;
 
+    /* Performance optimization */
     will-change: transform;
 }
 

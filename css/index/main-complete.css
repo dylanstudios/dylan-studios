@@ -1497,3 +1497,111 @@
     }
 
 }
+
+/* =========================================================
+   MAIN SCROLL INDICATOR
+========================================================= */
+
+.main-scroll-indicator {
+
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: black;
+    z-index: 50;
+
+}
+
+
+/* =========================================================
+   MAIN SCROLL LABEL
+========================================================= */
+
+.main-scroll-indicator .scroll-label {
+
+    color: black;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* =========================================================
+   MAIN SCROLL ARROW
+========================================================= */
+
+.main-scroll-indicator .scroll-arrow {
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    gap: -5px;
+
+    color: black;
+
+    border: 1px solid black;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 151, 178, 0.12);
+
+    box-shadow:
+        0 0 12px rgba(0, 151, 178, 0.35);
+
+    animation:
+        mainScrollBounce 1.8s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   ARROW BOUNCE
+========================================================= */
+
+@keyframes mainScrollBounce {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+        opacity: 0.65;
+
+    }
+
+    50% {
+
+        transform: translateY(6px);
+
+        opacity: 1;
+
+    }
+
+}
