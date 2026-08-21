@@ -1,0 +1,109 @@
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+
+/* =========================================================
+   BODY
+
+   Gives the scrollbar enough space for the transition.
+========================================================= */
+
+body {
+    min-height: 350vh;
+
+    font-family: "Times New Roman", Times, serif;
+    color: #111827;
+
+    background: #F7F5F0;
+}
+
+
+/* =========================================================
+   HEADER
+
+   Stays behind the main section.
+========================================================= */
+
+header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: #EEF1F4;
+    background-image: url("../images/index/index_headerbg.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    padding: 20px;
+
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN
+
+   Starts below the screen.
+========================================================= */
+
+main {
+    position: fixed;
+
+    top: 100vh;
+    left: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #EEF1F4;
+    background-image: url("../images/index/index_mainbg.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    padding: 10px;
+
+    z-index: 10;
+
+    will-change: transform;
+}
+
+/* =========================================================
+   GLOBAL HEADINGS / NAVIGATION FONT
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+.logo,
+.nav-links a {
+    font-family: "Cinzel", serif;
+}

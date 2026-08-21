@@ -1,5 +1,14 @@
 <!DOCTYPE html>
+
+<!-- =========================================================
+     HTML DOCUMENT
+
+     Language:
+     English
+========================================================= -->
+
 <html lang="en">
+
 
 <head>
 
@@ -7,9 +16,17 @@
          BASIC DOCUMENT SETTINGS
     ========================================================== -->
 
+    <!-- Character encoding -->
+
     <meta charset="UTF-8">
 
+
+    <!-- Responsive viewport for mobile devices -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Browser tab title -->
 
     <title>
         Dylan Studio | Branding • Web • Creative
@@ -17,180 +34,491 @@
 
 
     <!-- =========================================================
-         CSS
+         WEBSITE STYLESHEETS
     ========================================================== -->
 
-    <link rel="stylesheet" href="css/main.css">
+    <!-- Global styles -->
+
+    <link rel="stylesheet" href="css/index-main.css">
+
+
+    <!-- Navigation styles -->
+
     <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/services.css">
-    <link rel="stylesheet" href="css/pages.css">
-    <link rel="stylesheet" href="css/responsive.css">
+
+
+    <!-- Animated marquee styles -->
+
+    <link rel="stylesheet" href="css/index/header-marquee.css">
+
+
+    <!-- Hero section styles -->
+
+    <link rel="stylesheet" href="css/index/header-hero.css">
+
+
+    <!-- Statistics section styles -->
+
+    <link rel="stylesheet" href="css/index/main-complete.css">
+
+
+    <!-- Featured Work section styles -->
+
+    <link rel="stylesheet" href="css/index/feature-complete.css">
 
 
     <!-- =========================================================
-         GOOGLE FONTS
+         GOOGLE FONT CONNECTION
     ========================================================== -->
+
+    <!-- Connect early to Google Fonts -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
+
+    <!-- Connect to Google static font files -->
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Cinzel -->
+
+    <!-- =========================================================
+         WEBSITE FONT
+
+         Cinzel is used as the main display font.
+    ========================================================== -->
+
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Material Symbols -->
+
+    <!-- =========================================================
+         MATERIAL SYMBOLS
+
+         Used for icons throughout the website.
+    ========================================================== -->
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0">
 
 
     <!-- =========================================================
          JAVASCRIPT
-         
-         defer makes the script load without blocking the HTML.
+
+         defer:
+         → Downloads JavaScript while HTML loads.
+         → Runs after the HTML has been parsed.
     ========================================================== -->
 
     <script src="js/index.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+
 
 </head>
 
+
+<!-- =========================================================
+     WEBSITE BODY
+========================================================= -->
 
 <body>
 
 
     <!-- =========================================================
-         HEADER / NAVIGATION
+         HEADER
+
+         Contains:
+
+         → Navigation
+         → Top marquee
+         → Hero section
+         → Bottom marquee
+         → Header scroll indicator
     ========================================================== -->
 
     <header>
 
+
+        <!-- =====================================================
+             NAVIGATION BAR
+        ====================================================== -->
+
         <nav>
 
-            <!-- =================================================
-                 LOGO
-            ================================================== -->
+
+            <!-- ================================================= 
+         WEBSITE LOGO 
+    ================================================== -->
 
             <div class="logo">
 
-                <img src="images/DS_hori1.png" alt="Dylan Studio">
+                <!-- Dylan Studios horizontal logo -->
+
+                <img src="images/navi_logo.png" alt="Dylan Studio">
 
             </div>
 
 
-            <!-- =================================================
-                 NAVIGATION LINKS
-            ================================================== -->
+            <!-- ================================================= 
+         NAVIGATION LINKS 
+    ================================================== -->
 
             <div class="nav-links">
+
+
+                <!-- Home page -->
 
                 <a href="index.html" class="active">
                     Home
                 </a>
 
+
+                <!-- About page -->
+
                 <a href="about.html">
                     About
                 </a>
+
+
+                <!-- Services page -->
 
                 <a href="services.html">
                     Services
                 </a>
 
+
+                <!-- Work / portfolio page -->
+
                 <a href="work.html">
                     Work
                 </a>
 
+
+                <!-- Work process page -->
+
                 <a href="process.html">
                     Process
                 </a>
+
+
+                <!-- Contact page -->
 
                 <a href="contact.html">
                     Contact
                 </a>
 
 
-                <!-- START PROJECT -->
+                <!-- ============================================= 
+             PRIMARY NAVIGATION BUTTON
+
+             Main call-to-action.
+        ============================================== -->
 
                 <a href="startproject.html" class="start-project">
                     Start a Project
                 </a>
 
+
             </div>
+            <!-- END NAVIGATION LINKS -->
+
+
+            <!-- =================================================
+         MOBILE HAMBURGER MENU
+
+         This button is hidden on desktop.
+
+         On mobile screens, it appears on the right side
+         of the navigation bar.
+
+         JavaScript will add/remove the "active" class
+         to open and close the navigation menu.
+    ================================================== -->
+
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+
+                <!-- Top hamburger line -->
+
+                <span></span>
+
+
+                <!-- Middle hamburger line -->
+
+                <span></span>
+
+
+                <!-- Bottom hamburger line -->
+
+                <span></span>
+
+            </button>
+
 
         </nav>
+        <!-- END NAVIGATION BAR -->
+
+
+        <!-- =========================================================
+             TOP ANIMATED MARQUEE
+
+             Direction:
+             Moves LEFT
+
+             Purpose:
+             Displays Dylan Studios services and capabilities.
+        ========================================================== -->
+
+        <section class="studio-marquee studio-marquee-top">
+
+
+            <!-- Marquee movement row -->
+
+            <div class="marquee-row marquee-row-left">
+
+
+                <!-- Animated marquee track -->
+
+                <div class="marquee-track">
+
+
+                    <!-- =============================================
+                         FIRST MARQUEE CONTENT SET
+                    ============================================== -->
+
+                    <div class="marquee-content">
+
+
+                        <!-- Branding -->
+
+                        <span>
+                            BRANDING
+                        </span>
+
+                        <span class="marquee-icon icon-blue material-symbols-outlined">
+                            palette
+                        </span>
+
+
+                        <!-- Web Design -->
+
+                        <span>
+                            WEB DESIGN
+                        </span>
+
+                        <span class="marquee-icon icon-yellow material-symbols-outlined">
+                            language
+                        </span>
+
+
+                        <!-- Creative -->
+
+                        <span>
+                            CREATIVE
+                        </span>
+
+                        <span class="marquee-icon icon-pink material-symbols-outlined">
+                            auto_awesome
+                        </span>
+
+
+                        <!-- Engineering -->
+
+                        <span>
+                            ENGINEERING
+                        </span>
+
+                        <span class="marquee-icon icon-blue material-symbols-outlined">
+                            engineering
+                        </span>
+
+
+                        <!-- Brand Identity -->
+
+                        <span>
+                            BRAND IDENTITY
+                        </span>
+
+                        <span class="marquee-icon icon-yellow material-symbols-outlined">
+                            fingerprint
+                        </span>
+
+
+                    </div>
+                    <!-- END FIRST MARQUEE SET -->
+
+
+                    <!-- =============================================
+                         DUPLICATE MARQUEE CONTENT SET
+
+                         Duplicate content creates the seamless
+                         infinite marquee effect.
+                    ============================================== -->
+
+                    <div class="marquee-content">
+
+
+                        <span>
+                            BRANDING
+                        </span>
+
+                        <span class="marquee-icon icon-blue material-symbols-outlined">
+                            palette
+                        </span>
+
+
+                        <span>
+                            WEB DESIGN
+                        </span>
+
+                        <span class="marquee-icon icon-yellow material-symbols-outlined">
+                            language
+                        </span>
+
+
+                        <span>
+                            CREATIVE
+                        </span>
+
+                        <span class="marquee-icon icon-pink material-symbols-outlined">
+                            auto_awesome
+                        </span>
+
+
+                        <span>
+                            ENGINEERING
+                        </span>
+
+                        <span class="marquee-icon icon-blue material-symbols-outlined">
+                            engineering
+                        </span>
+
+
+                        <span>
+                            BRAND IDENTITY
+                        </span>
+
+                        <span class="marquee-icon icon-yellow material-symbols-outlined">
+                            fingerprint
+                        </span>
+
+
+                    </div>
+                    <!-- END DUPLICATE MARQUEE SET -->
+
+
+                </div>
+                <!-- END MARQUEE TRACK -->
+
+
+            </div>
+            <!-- END MARQUEE ROW -->
+
+
+        </section>
+        <!-- END TOP MARQUEE -->
 
 
         <!-- =========================================================
              HERO SECTION
+
+             Main introduction section of the homepage.
+
+             Contains:
+
+             → Studio introduction
+             → Main headline
+             → Description
+             → CTA buttons
+             → Logo visual
+             → Floating service cards
+             → Studio process
         ========================================================== -->
 
         <section class="hero" id="home">
 
 
             <!-- =================================================
-                 HERO CONTENT
+                 HERO TEXT CONTENT
             ================================================== -->
 
             <div class="hero-content">
 
 
-                <!-- HERO LABEL -->
+                <!-- Small hero category label -->
 
                 <p class="hero-label">
                     BRANDING • WEB • CREATIVE
                 </p>
 
 
-                <!-- HERO HEADING -->
+                <!-- =============================================
+                     MAIN HERO HEADING
+                ============================================== -->
 
                 <h1>
 
                     DESIGNING IDEAS.<br>
 
+
+                    <!-- Blue highlighted text -->
+
                     <span class="blue-text">
                         BUILDING
                     </span>
+
+
+                    <!-- Gradient highlighted text -->
 
                     <span class="gradient-text">
                         EXPERIENCES.
                     </span>
 
+
                 </h1>
 
 
-                <!-- HERO DECORATIVE LINES -->
+                <!-- =============================================
+                     DECORATIVE HERO LINES
+                ============================================== -->
 
                 <div class="hero-lines">
 
                     <span></span>
+
                     <span></span>
 
                 </div>
 
 
-                <!-- HERO DESCRIPTION -->
+                <!-- =============================================
+                     HERO DESCRIPTION
+                ============================================== -->
 
                 <p class="hero-description">
 
-                    Dylan Studio is a creative and digital studio
-                    focused on building professional digital
-                    experiences, visual communication, and
-                    structured design solutions.
+                    Dylan Studios is a creative and digital studio
+                    focused on building professional digital experiences,
+                    visual communication, and structured design solutions.
+
+                    We combine creativity and technology to turn
+                    ideas into meaningful experiences.
 
                 </p>
 
 
-                <!-- =================================================
-                     HERO BUTTONS
-                ================================================== -->
+                <!-- =============================================
+                     HERO ACTION BUTTONS
+                ============================================== -->
 
                 <div class="hero-buttons">
 
 
-                    <!-- START A PROJECT -->
+                    <!-- Primary CTA:
+                         Start a project -->
 
                     <a href="startproject.html" class="hero-btn primary-btn">
 
                         START A PROJECT
+
+                        <!-- Diagonal arrow icon -->
 
                         <span>
                             ↗
@@ -199,114 +527,50 @@
                     </a>
 
 
-                    <!-- VIEW OUR WORK -->
+                    <!-- Secondary CTA:
+                         View portfolio -->
 
                     <a href="work.html" class="hero-btn secondary-btn">
-
                         VIEW OUR WORK
-
                     </a>
 
-                </div>
-
-
-                <!-- =================================================
-                     HERO STATS
-                ================================================== -->
-
-                <div class="hero-stats">
-
-
-                    <!-- HEADING -->
-
-                    <div class="stats-heading">
-                        OUR NUMBERS
-                    </div>
-
-
-                    <!-- STATS ROW -->
-
-                    <div class="stats-row">
-
-
-                        <!-- PROJECTS -->
-
-                        <div class="stat-item projects-stat">
-
-                            <strong>
-                                03
-                            </strong>
-
-                            <span>
-                                PROJECTS
-                            </span>
-
-                        </div>
-
-
-                        <!-- DIVIDER -->
-
-                        <div class="stat-divider"></div>
-
-
-                        <!-- DOMAINS -->
-
-                        <div class="stat-item domains-stat">
-
-                            <strong>
-                                02
-                            </strong>
-
-                            <span>
-                                DOMAINS
-                            </span>
-
-                        </div>
-
-
-                        <!-- DIVIDER -->
-
-                        <div class="stat-divider"></div>
-
-
-                        <!-- PASSION -->
-
-                        <div class="stat-item passion-stat">
-
-                            <strong>
-                                100%
-                            </strong>
-
-                            <span>
-                                PASSION DRIVEN
-                            </span>
-
-                        </div>
-
-                    </div>
 
                 </div>
+                <!-- END HERO BUTTONS -->
+
 
             </div>
+            <!-- END HERO CONTENT -->
 
 
-            <!-- =========================================================
-                 HERO VISUAL
-            ========================================================== -->
+            <!-- =====================================================
+                 HERO VISUAL AREA
+
+                 Contains:
+
+                 → Main logo
+                 → Floating service cards
+
+                 The service cards respond to mouse movement
+                 using JavaScript parallax.
+            ====================================================== -->
 
             <div class="hero-visual">
 
 
-                <!-- HERO LOGO -->
+                <!-- Dylan Studios hero logo -->
 
-                <img src="images/DS_nobgB-W1.png" alt="Dylan Studio" class="hero-logo">
+                <img src="images/index/index_herofavicon.png" alt="Dylan Studio" class="hero-logo">
 
 
-                <!-- =================================================
-                     BRAND IDENTITY CARD
-                ================================================== -->
+                <!-- =============================================
+                     BRAND IDENTITY SERVICE CARD
+                ============================================== -->
 
                 <div class="service-card brand-card">
+
+
+                    <!-- Service icon -->
 
                     <div class="service-icon brand-icon">
 
@@ -315,6 +579,9 @@
                         </span>
 
                     </div>
+
+
+                    <!-- Service title -->
 
                     <div class="service-text">
 
@@ -328,14 +595,19 @@
 
                     </div>
 
+
                 </div>
+                <!-- END BRAND CARD -->
 
 
-                <!-- =================================================
-                     WEB DEVELOPMENT CARD
-                ================================================== -->
+                <!-- =============================================
+                     WEB DEVELOPMENT SERVICE CARD
+                ============================================== -->
 
                 <div class="service-card web-card">
+
+
+                    <!-- Service icon -->
 
                     <div class="service-icon web-icon">
 
@@ -344,6 +616,9 @@
                         </span>
 
                     </div>
+
+
+                    <!-- Service title -->
 
                     <div class="service-text">
 
@@ -357,14 +632,19 @@
 
                     </div>
 
+
                 </div>
+                <!-- END WEB CARD -->
 
 
-                <!-- =================================================
-                     VISUAL COMMUNICATION CARD
-                ================================================== -->
+                <!-- =============================================
+                     VISUAL COMMUNICATION SERVICE CARD
+                ============================================== -->
 
                 <div class="service-card visual-card">
+
+
+                    <!-- Service icon -->
 
                     <div class="service-icon visual-icon">
 
@@ -373,6 +653,9 @@
                         </span>
 
                     </div>
+
+
+                    <!-- Service title -->
 
                     <div class="service-text">
 
@@ -386,14 +669,19 @@
 
                     </div>
 
+
                 </div>
+                <!-- END VISUAL CARD -->
 
 
-                <!-- =================================================
-                     CREATIVE DESIGN CARD
-                ================================================== -->
+                <!-- =============================================
+                     CREATIVE DESIGN SERVICE CARD
+                ============================================== -->
 
                 <div class="service-card creative-card">
+
+
+                    <!-- Service icon -->
 
                     <div class="service-icon creative-icon">
 
@@ -402,6 +690,9 @@
                         </span>
 
                     </div>
+
+
+                    <!-- Service title -->
 
                     <div class="service-text">
 
@@ -415,54 +706,83 @@
 
                     </div>
 
+
                 </div>
+                <!-- END CREATIVE CARD -->
+
 
             </div>
+            <!-- END HERO VISUAL -->
 
 
-            <!-- =========================================================
+            <!-- =====================================================
                  HERO PROCESS
-            ========================================================== -->
+
+                 Displays the Dylan Studios creative process:
+
+                 IDEAS
+                 ↓
+                 STRATEGY
+                 ↓
+                 DESIGN
+                 ↓
+                 EXPERIENCE
+            ====================================================== -->
 
             <div class="hero-process">
 
 
-                <!-- PROCESS WORDS -->
+                <!-- Process step labels -->
 
                 <div class="process-words">
+
 
                     <span>
                         IDEAS
                     </span>
 
+
+                    <!-- Step separator -->
+
                     <b>
                         /
                     </b>
+
 
                     <span>
                         STRATEGY
                     </span>
 
+
+                    <!-- Step separator -->
+
                     <b>
                         /
                     </b>
+
 
                     <span>
                         DESIGN
                     </span>
 
+
+                    <!-- Step separator -->
+
                     <b>
                         /
                     </b>
+
 
                     <span>
                         EXPERIENCE
                     </span>
 
+
                 </div>
+                <!-- END PROCESS WORDS -->
 
 
-                <!-- PROCESS LINE -->
+                <!-- Decorative process line -->
 
                 <div class="process-line">
 
@@ -470,366 +790,613 @@
 
                 </div>
 
+
             </div>
+            <!-- END HERO PROCESS -->
+
 
         </section>
+        <!-- END HERO SECTION -->
 
 
         <!-- =========================================================
-             STUDIO MARQUEE
+             BOTTOM ANIMATED MARQUEE
+
+             Direction:
+             Moves RIGHT
+
+             Purpose:
+             Continues displaying Dylan Studios services.
         ========================================================== -->
 
-        <section class="studio-marquee">
+        <section class="studio-marquee studio-marquee-bottom">
 
 
-            <div class="marquee-row">
+            <!-- Marquee movement row -->
+
+            <div class="marquee-row marquee-row-right">
+
+
+                <!-- Animated marquee track -->
 
                 <div class="marquee-track">
 
 
-                    <!-- =================================================
-                         FIRST SET
-                    ================================================== -->
+                    <!-- =============================================
+                         FIRST MARQUEE CONTENT SET
+                    ============================================== -->
 
                     <div class="marquee-content">
 
-
-                        <!-- BRANDING -->
-
-                        <span>
-                            BRANDING
-                        </span>
-
-                        <span class="marquee-icon material-symbols-outlined">
-                            palette
-                        </span>
-
-
-                        <!-- WEB DESIGN -->
-
-                        <span>
-                            WEB DESIGN
-                        </span>
-
-                        <span class="marquee-icon material-symbols-outlined">
-                            language
-                        </span>
-
-
-                        <!-- CREATIVE -->
-
-                        <span>
-                            CREATIVE
-                        </span>
-
-                        <span class="marquee-icon material-symbols-outlined">
-                            auto_awesome
-                        </span>
-
-
-                        <!-- ENGINEERING -->
-
-                        <span>
-                            ENGINEERING
-                        </span>
-
-                        <span class="marquee-icon material-symbols-outlined">
-                            engineering
-                        </span>
-
-
-                        <!-- VISUAL COMMUNICATION -->
 
                         <span>
                             VISUAL COMMUNICATION
                         </span>
 
-                        <span class="marquee-icon material-symbols-outlined">
+                        <span class="marquee-icon icon-pink material-symbols-outlined">
                             campaign
                         </span>
 
-
-                        <!-- DYLAN STUDIO -->
 
                         <span>
                             DYLAN STUDIO
                         </span>
 
-                        <span class="marquee-icon material-symbols-outlined">
+                        <span class="marquee-icon icon-blue material-symbols-outlined">
                             diamond
                         </span>
 
-
-                        <!-- DIGITAL DESIGN -->
 
                         <span>
                             DIGITAL DESIGN
                         </span>
 
-                        <span class="marquee-icon material-symbols-outlined">
+                        <span class="marquee-icon icon-yellow material-symbols-outlined">
                             design_services
                         </span>
 
 
-                        <!-- BRAND IDENTITY -->
+                        <span>
+                            WEB DEVELOPMENT
+                        </span>
+
+                        <span class="marquee-icon icon-pink material-symbols-outlined">
+                            code
+                        </span>
+
 
                         <span>
-                            BRAND IDENTITY
+                            VISUAL DESIGN
                         </span>
 
-                        <span class="marquee-icon material-symbols-outlined">
-                            fingerprint
+                        <span class="marquee-icon icon-blue material-symbols-outlined">
+                            visibility
                         </span>
+
 
                     </div>
+                    <!-- END FIRST MARQUEE SET -->
 
 
-                    <!-- =================================================
-                         DUPLICATE SET
-                         
-                         Required for seamless marquee loop.
-                    ================================================== -->
+                    <!-- =============================================
+                         DUPLICATE MARQUEE CONTENT SET
+
+                         Used for seamless infinite animation.
+                    ============================================== -->
 
                     <div class="marquee-content">
 
-
-                        <!-- BRANDING -->
-
-                        <span>
-                            BRANDING
-                        </span>
-
-                        <span class="marquee-icon material-symbols-outlined">
-                            palette
-                        </span>
-
-
-                        <!-- WEB DESIGN -->
-
-                        <span>
-                            WEB DESIGN
-                        </span>
-
-                        <span class="marquee-icon material-symbols-outlined">
-                            language
-                        </span>
-
-
-                        <!-- CREATIVE -->
-
-                        <span>
-                            CREATIVE
-                        </span>
-
-                        <span class="marquee-icon material-symbols-outlined">
-                            auto_awesome
-                        </span>
-
-
-                        <!-- ENGINEERING -->
-
-                        <span>
-                            ENGINEERING
-                        </span>
-
-                        <span class="marquee-icon material-symbols-outlined">
-                            engineering
-                        </span>
-
-
-                        <!-- VISUAL COMMUNICATION -->
+                        <!-- Same content repeated -->
 
                         <span>
                             VISUAL COMMUNICATION
                         </span>
 
-                        <span class="marquee-icon material-symbols-outlined">
+                        <span class="marquee-icon icon-pink material-symbols-outlined">
                             campaign
                         </span>
 
-
-                        <!-- DYLAN STUDIO -->
 
                         <span>
                             DYLAN STUDIO
                         </span>
 
-                        <span class="marquee-icon material-symbols-outlined">
+                        <span class="marquee-icon icon-blue material-symbols-outlined">
                             diamond
                         </span>
 
-
-                        <!-- DIGITAL DESIGN -->
 
                         <span>
                             DIGITAL DESIGN
                         </span>
 
-                        <span class="marquee-icon material-symbols-outlined">
+                        <span class="marquee-icon icon-yellow material-symbols-outlined">
                             design_services
                         </span>
 
 
-                        <!-- BRAND IDENTITY -->
+                        <span>
+                            WEB DEVELOPMENT
+                        </span>
+
+                        <span class="marquee-icon icon-pink material-symbols-outlined">
+                            code
+                        </span>
+
 
                         <span>
-                            BRAND IDENTITY
+                            VISUAL DESIGN
                         </span>
 
-                        <span class="marquee-icon material-symbols-outlined">
-                            fingerprint
+                        <span class="marquee-icon icon-blue material-symbols-outlined">
+                            visibility
                         </span>
+
 
                     </div>
+                    <!-- END DUPLICATE MARQUEE SET -->
+
 
                 </div>
+                <!-- END MARQUEE TRACK -->
+
 
             </div>
+            <!-- END MARQUEE ROW -->
+
 
         </section>
+        <!-- END BOTTOM MARQUEE -->
 
 
         <!-- =========================================================
-             HERO SCROLL INDICATOR
+             HEADER SCROLL INDICATOR
+
+             Purpose:
+
+             Tells the user to scroll DOWN.
+
+             The next animation:
+
+             HEADER / HERO
+                     ↓
+                  MAIN
+
+             Main section slides upward from below.
+
+             Class:
+             .header-scroll-indicator
         ========================================================== -->
 
-        <div class="hero-scroll-indicator">
+        <div class="hero-scroll-indicator header-scroll-indicator">
 
-            <span>
+
+            <!-- Scroll instruction -->
+
+            <span class="scroll-label">
                 SCROLL TO EXPLORE
             </span>
 
-            <span class="scroll-arrow">
-                ↓
+
+            <!-- Arrow points DOWN -->
+
+            <span class="scroll-arrow material-symbols-outlined">
+                arrow_downward
             </span>
 
+
+        </div>
+        <!-- END HEADER SCROLL INDICATOR -->
+
+
+    </header>
+    <!-- END HEADER -->
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+
+         Contains:
+
+         → Studio statistics
+         → Main scroll indicator
+         → What We Do
+         → Services carousel
+         → Studio tagline
+         → Featured Work trigger
+    ========================================================== -->
+
+    <main>
+        <div class="main-scroll-indicator">
+            <span>SCROLL TO EXPLORE</span>
+
+            <div class="main-scroll-line">
+                <div class="main-scroll-progress"></div>
+            </div>
         </div>
 
+        <!-- =====================================================
+             HERO STATS / STUDIO STATISTICS
+        ====================================================== -->
 
-        <!-- =========================================================
-             WHAT WE DO
-        ========================================================== -->
+        <div class="hero-stats">
 
-        <section class="what-we-do" id="services">
+            <!-- Statistics section title -->
 
-
-            <!-- =================================================
-                 SECTION HEADING
-            ================================================== -->
-
-            <div class="section-heading">
-
-                <span></span>
-
-                <h2>
-                    WHAT WE DO
-                </h2>
-
-                <span></span>
-
+            <div class="stats-heading">
+                OUR NUMBERS
             </div>
 
 
+            <!-- =============================================
+                 STATISTICS ROW
+            ============================================== -->
+
+            <div class="stats-row">
+
+
+                <!-- PROJECTS STATISTIC -->
+
+                <div class="stat-item projects-stat">
+
+
+                    <!-- Statistic icon -->
+
+                    <div class="stat-icon">
+
+                        <span class="material-symbols-outlined">
+                            folder_open
+                        </span>
+
+                    </div>
+
+
+                    <!-- Statistic number -->
+
+                    <strong>
+                        03
+                    </strong>
+
+
+                    <!-- Statistic label -->
+
+                    <span>
+                        PROJECTS
+                    </span>
+
+
+                </div>
+                <!-- END PROJECTS STAT -->
+
+
+                <!-- Visual divider -->
+
+                <div class="stat-divider"></div>
+
+
+                <!-- INDUSTRIES SERVED STATISTIC -->
+
+                <div class="stat-item domains-stat">
+
+
+                    <!-- Statistic icon -->
+
+                    <div class="stat-icon">
+
+                        <span class="material-symbols-outlined">
+                            language
+                        </span>
+
+                    </div>
+
+
+                    <!-- Statistic number -->
+
+                    <strong>
+                        02
+                    </strong>
+
+
+                    <!-- Statistic label -->
+
+                    <span>
+                        Industries Served
+                    </span>
+
+
+                </div>
+                <!-- END INDUSTRIES STAT -->
+
+
+                <!-- Visual divider -->
+
+                <div class="stat-divider"></div>
+
+
+                <!-- ESTABLISHED YEAR STATISTIC -->
+
+                <div class="stat-item passion-stat">
+
+
+                    <!-- Statistic icon -->
+
+                    <div class="stat-icon">
+
+                        <span class="material-symbols-outlined">
+                            rocket_launch
+                        </span>
+
+                    </div>
+
+
+                    <!-- Establishment year -->
+
+                    <strong>
+                        2026
+                    </strong>
+
+
+                    <!-- Statistic label -->
+
+                    <span>
+                        Established
+                    </span>
+
+
+                </div>
+                <!-- END ESTABLISHED STAT -->
+
+
+            </div>
+            <!-- END STATISTICS ROW -->
+
+
+        </div>
+        <!-- END HERO STATS -->
+
+
+        <!-- =========================================================
+             WHAT WE DO SECTION
+
+             Introduces the main services offered by
+             Dylan Studios.
+        ========================================================== -->
+
+        <section class="what-we-do-intro">
+
+
             <!-- =================================================
-                 CAROUSEL WRAPPER
+                 SECTION LABEL
             ================================================== -->
 
-            <div class="services-carousel-wrapper">
+            <div class="what-we-do-label">
 
 
-                <!-- PREVIOUS BUTTON -->
+                <!-- Decorative lines -->
 
-                <button class="carousel-arrow carousel-prev" aria-label="Previous" type="button">
+                <div class="label-lines">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+                <!-- Section name -->
+
+                <span>
+                    WHAT WE DO
+                </span>
+
+
+                <!-- Decorative lines -->
+
+                <div class="label-lines">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+            </div>
+            <!-- END SECTION LABEL -->
+
+
+            <!-- =================================================
+                 MAIN SECTION HEADING
+            ================================================== -->
+
+            <h2>
+
+                We Build. Design. Create.<br>
+
+                <span>
+                    You Grow.
+                </span>
+
+            </h2>
+
+
+            <!-- =================================================
+                 SECTION DESCRIPTION
+            ================================================== -->
+
+            <p>
+
+                From branding to engineering, we provide
+                end-to-end solutions that bring ideas to life
+                and help your vision stand out.
+
+            </p>
+
+
+            <!-- =================================================
+                 SERVICES CAROUSEL
+
+                 Contains:
+
+                 ← Previous button
+                 → Service cards
+                 → Next button
+            ================================================== -->
+
+            <div class="what-we-do-carousel">
+
+
+                <!-- Previous carousel button -->
+
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous">
+
                     &#10094;
+
                 </button>
 
 
-                <!-- =================================================
-                     CAROUSEL
-                ================================================== -->
+                <!-- =============================================
+                     CAROUSEL VIEWPORT
 
-                <div class="services-carousel" id="servicesCarousel">
+                     Hides cards outside the visible area.
+                ============================================== -->
+
+                <div class="carousel-viewport">
 
 
-                    <div class="services-track">
+                    <!-- =========================================
+                         CAROUSEL TRACK
+
+                         This element moves horizontally
+                         using JavaScript.
+                    ========================================== -->
+
+                    <div class="what-we-do-track">
 
 
-                        <!-- =============================================
-                             CARD 01 — BRANDING
-                        ============================================== -->
+                        <!-- =====================================
+                             SERVICE 01 — BRANDING
+                        ====================================== -->
 
-                        <div class="what-we-do-card">
+                        <div class="what-we-do-card card-blue">
+
+
+                            <!-- Card content -->
 
                             <div class="what-we-do-content">
 
 
-                                <div class="what-we-do-icon">
+                                <!-- Card heading area -->
 
-                                    <span class="material-symbols-outlined">
-                                        palette
-                                    </span>
+                                <div class="what-we-do-card-header">
+
+
+                                    <!-- Service icon -->
+
+                                    <div class="what-we-do-icon">
+
+                                        <span class="material-symbols-outlined">
+                                            palette
+                                        </span>
+
+                                    </div>
+
+
+                                    <!-- Service name -->
+
+                                    <h3>
+                                        Branding
+                                    </h3>
+
 
                                 </div>
+                                <!-- END CARD HEADER -->
 
 
-                                <h3>
-                                    Branding
-                                </h3>
-
+                                <!-- Service description -->
 
                                 <p>
+
                                     We create professional brand identities,
                                     logos, taglines, and visual systems that
                                     give your business a strong identity.
+
                                 </p>
 
-                            </div>
 
+                            </div>
+                            <!-- END CARD CONTENT -->
+
+
+                            <!-- Card number and color area -->
 
                             <div class="what-we-do-side">
+
+
+                                <!-- Service number -->
 
                                 <div class="what-we-do-number">
                                     01
                                 </div>
 
+
+                                <!-- Decorative color block -->
+
                                 <div class="what-we-do-color"></div>
 
+
                             </div>
+                            <!-- END CARD SIDE -->
+
 
                         </div>
+                        <!-- END BRANDING CARD -->
 
 
-                        <!-- =============================================
-                             CARD 02 — WEB DESIGN
-                        ============================================== -->
+                        <!-- =====================================
+                             SERVICE 02 — WEB DESIGN
+                        ====================================== -->
 
-                        <div class="what-we-do-card">
+                        <div class="what-we-do-card card-yellow">
 
                             <div class="what-we-do-content">
 
+                                <div class="what-we-do-card-header">
 
-                                <div class="what-we-do-icon">
+                                    <!-- Web service icon -->
 
-                                    <span class="material-symbols-outlined">
-                                        language
-                                    </span>
+                                    <div class="what-we-do-icon">
+
+                                        <span class="material-symbols-outlined">
+                                            language
+                                        </span>
+
+                                    </div>
+
+
+                                    <!-- Service name -->
+
+                                    <h3>
+                                        Web Design
+                                    </h3>
 
                                 </div>
 
 
-                                <h3>
-                                    Web Design
-                                </h3>
-
+                                <!-- Service description -->
 
                                 <p>
+
                                     We design and develop modern,
-                                    responsive websites focused on
-                                    usability and strong visual experiences.
+                                    responsive websites focused on usability
+                                    and strong visual experiences.
+
                                 </p>
 
                             </div>
 
+
+                            <!-- Card number and color -->
 
                             <div class="what-we-do-side">
 
@@ -841,40 +1408,55 @@
 
                             </div>
 
+
                         </div>
+                        <!-- END WEB DESIGN CARD -->
 
 
-                        <!-- =============================================
-                             CARD 03 — CREATIVE
-                        ============================================== -->
+                        <!-- =====================================
+                             SERVICE 03 — CREATIVE
+                        ====================================== -->
 
-                        <div class="what-we-do-card">
+                        <div class="what-we-do-card card-pink">
 
                             <div class="what-we-do-content">
 
+                                <div class="what-we-do-card-header">
 
-                                <div class="what-we-do-icon">
+                                    <!-- Creative service icon -->
 
-                                    <span class="material-symbols-outlined">
-                                        auto_awesome
-                                    </span>
+                                    <div class="what-we-do-icon">
+
+                                        <span class="material-symbols-outlined">
+                                            auto_awesome
+                                        </span>
+
+                                    </div>
+
+
+                                    <!-- Service name -->
+
+                                    <h3>
+                                        Creative
+                                    </h3>
 
                                 </div>
 
 
-                                <h3>
-                                    Creative
-                                </h3>
-
+                                <!-- Service description -->
 
                                 <p>
+
                                     From social media graphics to marketing
                                     creatives and presentations, we create
                                     visuals that communicate clearly.
+
                                 </p>
 
                             </div>
 
+
+                            <!-- Card number and color -->
 
                             <div class="what-we-do-side">
 
@@ -886,40 +1468,56 @@
 
                             </div>
 
+
                         </div>
+                        <!-- END CREATIVE CARD -->
 
 
-                        <!-- =============================================
-                             CARD 04 — ENGINEERING
-                        ============================================== -->
+                        <!-- =====================================
+                             SERVICE 04 — ENGINEERING
+                        ====================================== -->
 
-                        <div class="what-we-do-card">
+                        <div class="what-we-do-card card-blue">
 
                             <div class="what-we-do-content">
 
+                                <div class="what-we-do-card-header">
 
-                                <div class="what-we-do-icon">
 
-                                    <span class="material-symbols-outlined">
-                                        engineering
-                                    </span>
+                                    <!-- Engineering service icon -->
+
+                                    <div class="what-we-do-icon">
+
+                                        <span class="material-symbols-outlined">
+                                            engineering
+                                        </span>
+
+                                    </div>
+
+
+                                    <!-- Service name -->
+
+                                    <h3>
+                                        Engineering
+                                    </h3>
 
                                 </div>
 
 
-                                <h3>
-                                    Engineering
-                                </h3>
-
+                                <!-- Service description -->
 
                                 <p>
+
                                     We create engineering drawings,
-                                    technical documentation, project
-                                    presentations, and structured documents.
+                                    technical documentation and project
+                                    presentations.
+
                                 </p>
 
                             </div>
 
+
+                            <!-- Card number and color -->
 
                             <div class="what-we-do-side">
 
@@ -931,40 +1529,56 @@
 
                             </div>
 
+
                         </div>
+                        <!-- END ENGINEERING CARD -->
 
 
-                        <!-- =============================================
-                             CARD 05 — DIGITAL TEMPLATES
-                        ============================================== -->
+                        <!-- =====================================
+                             SERVICE 05 — DIGITAL TEMPLATES
+                        ====================================== -->
 
-                        <div class="what-we-do-card">
+                        <div class="what-we-do-card card-yellow">
 
                             <div class="what-we-do-content">
 
+                                <div class="what-we-do-card-header">
 
-                                <div class="what-we-do-icon">
 
-                                    <span class="material-symbols-outlined">
-                                        dashboard_customize
-                                    </span>
+                                    <!-- Digital template icon -->
+
+                                    <div class="what-we-do-icon">
+
+                                        <span class="material-symbols-outlined">
+                                            dashboard_customize
+                                        </span>
+
+                                    </div>
+
+
+                                    <!-- Service name -->
+
+                                    <h3>
+                                        Digital Templates
+                                    </h3>
 
                                 </div>
 
 
-                                <h3>
-                                    Digital Templates
-                                </h3>
-
+                                <!-- Service description -->
 
                                 <p>
+
                                     Ready-to-use and customizable digital
                                     templates designed to save time while
                                     maintaining a professional appearance.
+
                                 </p>
 
                             </div>
 
+
+                            <!-- Card number and color -->
 
                             <div class="what-we-do-side">
 
@@ -976,40 +1590,56 @@
 
                             </div>
 
+
                         </div>
+                        <!-- END DIGITAL TEMPLATES CARD -->
 
 
-                        <!-- =============================================
-                             CARD 06 — DOCUMENTATION
-                        ============================================== -->
+                        <!-- =====================================
+                             SERVICE 06 — DOCUMENTATION
+                        ====================================== -->
 
-                        <div class="what-we-do-card">
+                        <div class="what-we-do-card card-pink">
 
                             <div class="what-we-do-content">
 
+                                <div class="what-we-do-card-header">
 
-                                <div class="what-we-do-icon">
 
-                                    <span class="material-symbols-outlined">
-                                        draw
-                                    </span>
+                                    <!-- Documentation service icon -->
+
+                                    <div class="what-we-do-icon">
+
+                                        <span class="material-symbols-outlined">
+                                            draw
+                                        </span>
+
+                                    </div>
+
+
+                                    <!-- Service name -->
+
+                                    <h3>
+                                        Documentation
+                                    </h3>
 
                                 </div>
 
 
-                                <h3>
-                                    Documentation
-                                </h3>
-
+                                <!-- Service description -->
 
                                 <p>
+
                                     Professional project documentation,
                                     presentations, portfolios, and structured
                                     digital materials.
+
                                 </p>
 
                             </div>
 
+
+                            <!-- Card number and color -->
 
                             <div class="what-we-do-side">
 
@@ -1021,31 +1651,288 @@
 
                             </div>
 
+
                         </div>
+                        <!-- END DOCUMENTATION CARD -->
+
 
                     </div>
+                    <!-- END CAROUSEL TRACK -->
+
 
                 </div>
+                <!-- END CAROUSEL VIEWPORT -->
 
 
-                <!-- NEXT BUTTON -->
+                <!-- =============================================
+                     NEXT CAROUSEL BUTTON
+                ============================================== -->
 
-                <button class="carousel-arrow carousel-next" aria-label="Next" type="button">
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next">
+
                     &#10095;
+
                 </button>
 
+
             </div>
+            <!-- END SERVICES CAROUSEL -->
 
 
             <!-- =================================================
-                 CAROUSEL DOTS
+                 CAROUSEL NAVIGATION DOTS
+
+                 JavaScript can also generate and control
+                 these dots automatically.
             ================================================== -->
 
-            <div class="carousel-dots" id="carouselDots"></div>
+            <div class="carousel-dots">
+
+                <!-- Service 01 -->
+
+                <button class="carousel-dot active" type="button" aria-label="Card 1"></button>
+
+
+                <!-- Service 02 -->
+
+                <button class="carousel-dot" type="button" aria-label="Card 2"></button>
+
+
+                <!-- Service 03 -->
+
+                <button class="carousel-dot" type="button" aria-label="Card 3"></button>
+
+
+                <!-- Service 04 -->
+
+                <button class="carousel-dot" type="button" aria-label="Card 4"></button>
+
+
+                <!-- Service 05 -->
+
+                <button class="carousel-dot" type="button" aria-label="Card 5"></button>
+
+
+                <!-- Service 06 -->
+
+                <button class="carousel-dot" type="button" aria-label="Card 6"></button>
+
+
+            </div>
+            <!-- END CAROUSEL DOTS -->
+
 
         </section>
+        <!-- END WHAT WE DO SECTION -->
 
-    </header>
+
+        <!-- =========================================================
+             DYLAN STUDIOS TAGLINE
+        ========================================================== -->
+
+        <div class="studio-tagline">
+
+            <p>
+
+                One Studio. Many Solutions.
+
+                Built for
+
+                <!-- Highlighted tagline word -->
+
+                <span>
+                    Impact.
+                </span>
+
+            </p>
+
+        </div>
+        <!-- END STUDIO TAGLINE -->
+
+
+        <!-- =========================================================
+             FEATURED WORK SCROLL TRIGGER
+
+             This element provides space / timing for the
+             Featured Work scroll animation.
+        ========================================================== -->
+
+        <div class="featured-trigger"></div>
+
+
+    </main>
+    <!-- END MAIN CONTENT -->
+
+
+    <!-- =========================================================
+         FEATURED WORK SECTION
+
+         This section is controlled by the scroll animation.
+
+         Animation:
+
+         Starts:
+         Outside the screen on the LEFT
+
+         ↓ User scrolls
+
+         Ends:
+         Fully visible on screen
+    ========================================================== -->
+
+    <section class="featured">
+
+
+        <!-- =====================================================
+             FEATURED WORK CONTENT
+        ====================================================== -->
+
+        <div class="featured-content">
+
+
+            <!-- Section number and label -->
+
+            <p class="section-number">
+                02 — FEATURED WORK
+            </p>
+
+
+            <!-- Main Featured Work heading -->
+
+            <h2>
+
+                SELECTED<br>
+
+                WORK
+
+            </h2>
+
+
+            <!-- Featured Work description -->
+
+            <p class="featured-description">
+
+                A selection of projects created by Dylan Studios.
+
+            </p>
+
+
+            <!-- =================================================
+                 PROJECT LIST
+            ================================================== -->
+
+            <div class="project-list">
+
+
+                <!-- =============================================
+                     PROJECT 01
+                ============================================== -->
+
+                <div class="project">
+
+
+                    <!-- Project number -->
+
+                    <span>
+                        01
+                    </span>
+
+
+                    <!-- Project information -->
+
+                    <div>
+
+                        <h3>
+                            Dylan Studios Website
+                        </h3>
+
+                        <p>
+                            Web Design · Development
+                        </p>
+
+                    </div>
+
+
+                </div>
+                <!-- END PROJECT 01 -->
+
+
+                <!-- =============================================
+                     PROJECT 02
+                ============================================== -->
+
+                <div class="project">
+
+
+                    <!-- Project number -->
+
+                    <span>
+                        02
+                    </span>
+
+
+                    <!-- Project information -->
+
+                    <div>
+
+                        <h3>
+                            STEM Racing Project
+                        </h3>
+
+                        <p>
+                            Engineering · Design
+                        </p>
+
+                    </div>
+
+
+                </div>
+                <!-- END PROJECT 02 -->
+
+
+                <!-- =============================================
+                     PROJECT 03
+                ============================================== -->
+
+                <div class="project">
+
+
+                    <!-- Project number -->
+
+                    <span>
+                        03
+                    </span>
+
+
+                    <!-- Project information -->
+
+                    <div>
+
+                        <h3>
+                            Visual Identity
+                        </h3>
+
+                        <p>
+                            Branding · Creative Design
+                        </p>
+
+                    </div>
+
+
+                </div>
+                <!-- END PROJECT 03 -->
+
+
+            </div>
+            <!-- END PROJECT LIST -->
+
+
+        </div>
+        <!-- END FEATURED CONTENT -->
+
+
+    </section>
+    <!-- END FEATURED WORK SECTION -->
 
 
 </body>

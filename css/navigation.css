@@ -1,8 +1,19 @@
 /* =========================================================
+   DYLAN STUDIOS
    NAVIGATION BAR
 ========================================================= */
 
+
+/* =========================================================
+   MAIN NAVIGATION CONTAINER
+
+   - Full-width navigation bar
+   - Maximum width prevents it from becoming too wide
+   - Flexbox places logo on the left and links on the right
+========================================================= */
+
 nav {
+
     width: 100%;
     max-width: 1590px;
     height: 70px;
@@ -18,10 +29,16 @@ nav {
     background: #FFFFFF;
 
     border: 1px solid rgba(229, 231, 235, 0.7);
+
     border-radius: 15px;
 
     box-shadow:
         0 8px 30px rgba(17, 24, 39, 0.08);
+
+    position: relative;
+
+    z-index: 1000;
+
 }
 
 
@@ -30,45 +47,60 @@ nav {
 ========================================================= */
 
 .logo {
+
     display: flex;
     align-items: center;
 
-    font-size: 28px;
-    font-weight: 700;
-
-    color: #0097B2;
-
     flex-shrink: 0;
+
 }
 
+
+/* Dylan Studios logo image */
+
 .logo img {
+
     width: 200px;
     height: auto;
 
     display: block;
+
 }
 
 
 /* =========================================================
-   NAVIGATION LINKS
+   DESKTOP NAVIGATION LINKS
+
+   - Links appear horizontally
+   - Pushed toward the right using margin-left: auto
 ========================================================= */
 
 .nav-links {
+
     display: flex;
+
     align-items: center;
 
     gap: 38px;
 
     margin-left: auto;
+
 }
 
+
+/* =========================================================
+   NAVIGATION LINK
+========================================================= */
+
 .nav-links a {
+
     position: relative;
 
     display: inline-flex;
+
     align-items: center;
 
-    height: 86px;
+    height: 70px;
 
     padding: 0;
 
@@ -77,13 +109,16 @@ nav {
     color: #111827;
 
     font-size: 16px;
+
     font-weight: 600;
 
     text-transform: uppercase;
 
     white-space: nowrap;
 
-    transition: color 0.25s ease;
+    transition:
+        color 0.25s ease;
+
 }
 
 
@@ -92,18 +127,22 @@ nav {
 ========================================================= */
 
 .nav-links a:hover {
+
     color: #0097B2;
+
 }
 
 
 /* =========================================================
    ACTIVE NAVIGATION LINK
+
+   Highlights the current page.
 ========================================================= */
 
 .nav-links a.active {
+
     color: #0097B2;
 
-    text-decoration: none;
 }
 
 
@@ -112,13 +151,15 @@ nav {
 ========================================================= */
 
 .nav-links a.active::after {
+
     content: "";
 
     position: absolute;
 
     left: 0;
     right: 0;
-    bottom: 18px;
+
+    bottom: 14px;
 
     width: 100%;
     height: 3px;
@@ -128,14 +169,16 @@ nav {
     background: #0097B2;
 
     border-radius: 10px;
+
 }
 
 
 /* =========================================================
-   START A PROJECT NAVIGATION BUTTON
+   START A PROJECT BUTTON
 ========================================================= */
 
 .start-project {
+
     height: auto !important;
 
     margin-left: 12px;
@@ -153,31 +196,380 @@ nav {
         color 0.3s ease,
         transform 0.3s ease,
         box-shadow 0.3s ease;
+
 }
 
 
 /* =========================================================
-   START A PROJECT HOVER
+   START PROJECT BUTTON HOVER
 ========================================================= */
 
 .start-project:hover {
+
     background: linear-gradient(90deg,
             #FF79B3,
             #FFCA6B);
 
-    color: #ffffff !important;
+    color: #FFFFFF !important;
 
     transform: translateY(-2px);
 
     box-shadow:
         0 7px 18px rgba(255, 121, 179, 0.25);
+
 }
 
 
 /* =========================================================
-   REMOVE ACTIVE UNDERLINE FROM START PROJECT
+   REMOVE ACTIVE UNDERLINE
+
+   The Start Project button should not have the normal
+   navigation underline.
 ========================================================= */
 
 .nav-links a.start-project::after {
+
     display: none;
+
+}
+
+
+/* =========================================================
+   HAMBURGER MENU BUTTON
+
+   Hidden on desktop.
+
+   It will only appear on mobile screens.
+========================================================= */
+
+.menu-toggle {
+
+    display: none;
+
+    width: 45px;
+    height: 45px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+}
+
+
+/* =========================================================
+   HAMBURGER LINES
+
+   These are the three lines:
+
+       ━━━━━
+       ━━━━━
+       ━━━━━
+========================================================= */
+
+.menu-toggle span {
+
+    display: block;
+
+    width: 27px;
+    height: 3px;
+
+    background: #0097B2;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+
+   Activates on tablets and mobile devices.
+========================================================= */
+
+@media (max-width: 900px) {
+
+
+    /* =============================================
+       NAVIGATION BAR
+    ============================================= */
+
+    nav {
+
+        height: 65px;
+
+        padding: 0 20px;
+
+    }
+
+
+    /* =============================================
+       SMALLER LOGO
+    ============================================= */
+
+    .logo img {
+
+        width: 150px;
+
+    }
+
+
+    /* =============================================
+       SHOW HAMBURGER BUTTON
+    ============================================= */
+
+    .menu-toggle {
+
+        display: flex;
+
+    }
+
+
+    /* =============================================
+       MOBILE NAVIGATION MENU
+
+       Hidden by default.
+
+       When JavaScript adds:
+
+           .active
+
+       the menu becomes visible.
+    ============================================= */
+
+    .nav-links {
+
+        position: absolute;
+
+        top: calc(100% + 10px);
+
+        left: 0;
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 4px;
+
+        padding: 20px;
+
+        background: #FFFFFF;
+
+        border: 1px solid rgba(229, 231, 235, 0.8);
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 18px 40px rgba(17, 24, 39, 0.15);
+
+
+        /* Hidden state */
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+    }
+
+
+    /* =============================================
+       OPEN MOBILE MENU
+
+       JavaScript adds:
+
+           .active
+    ============================================= */
+
+    .nav-links.active {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
+
+    }
+
+
+    /* =============================================
+       MOBILE NAVIGATION LINKS
+    ============================================= */
+
+    .nav-links a {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 45px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 10px 0;
+
+    }
+
+
+    /* =============================================
+       ACTIVE LINK UNDERLINE
+
+       Adjusted for vertical mobile layout.
+    ============================================= */
+
+    .nav-links a.active::after {
+
+        width: 40px;
+
+        bottom: 4px;
+
+    }
+
+
+    /* =============================================
+       START PROJECT MOBILE BUTTON
+    ============================================= */
+
+    .start-project {
+
+        width: auto !important;
+
+        margin-left: 0;
+
+        margin-top: 10px;
+
+        padding: 14px 25px !important;
+
+    }
+
+
+    /* =============================================
+       HAMBURGER → X ANIMATION
+
+       When .menu-open is added to the button:
+
+          ☰  becomes  ✕
+    ============================================= */
+
+    .menu-toggle.menu-open span:nth-child(1) {
+
+        transform:
+            translateY(8px) rotate(45deg);
+
+    }
+
+
+    .menu-toggle.menu-open span:nth-child(2) {
+
+        opacity: 0;
+
+    }
+
+
+    .menu-toggle.menu-open span:nth-child(3) {
+
+        transform:
+            translateY(-8px) rotate(-45deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE SCREENS
+========================================================= */
+
+@media (max-width: 480px) {
+
+
+    /* Smaller navigation padding */
+
+    nav {
+
+        height: 60px;
+
+        padding: 0 15px;
+
+        border-radius: 12px;
+
+    }
+
+
+    /* Smaller logo */
+
+    .logo img {
+
+        width: 125px;
+
+    }
+
+
+    /* Smaller hamburger */
+
+    .menu-toggle {
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+
+    .menu-toggle span {
+
+        width: 24px;
+
+    }
+
+
+    /* Mobile menu spacing */
+
+    .nav-links {
+
+        padding: 18px 15px;
+
+    }
+
+
+    /* Slightly smaller navigation text */
+
+    .nav-links a {
+
+        font-size: 14px;
+
+    }
+
 }

@@ -1,578 +1,1005 @@
 /* =========================================================
-   DYLAN STUDIO
+   DYLAN STUDIOS
    INDEX.JS
-   ========================================================= */
+
+   WEBSITE JAVASCRIPT FEATURES
+
+   01. Hero Service Card Parallax
+   02. Hero Scroll Indicator
+   03. Marquee Visibility Control
+   04. What We Do Carousel
+   05. Main + Featured Scroll System
+
+========================================================= */
 
 
 /* =========================================================
-   01. HERO SERVICE CARD PARALLAX
-   ========================================================= */
+   INITIALIZE WEBSITE
 
-const hero = document.querySelector(".hero");
-const serviceCards = document.querySelectorAll(".service-card");
+   Runs all website JavaScript after the DOM is ready.
+========================================================= */
 
-if (hero && serviceCards.length) {
+function initializeWebsite() {
 
-    hero.addEventListener("mousemove", function (e) {
 
-        const heroRect = hero.getBoundingClientRect();
+    /* =====================================================
+       01. HERO SERVICE CARD PARALLAX
 
-        const mouseX = e.clientX - heroRect.left;
-        const mouseY = e.clientY - heroRect.top;
+       Moves service cards slightly based on the mouse
+       position inside the Hero section.
+    ===================================================== */
 
-        serviceCards.forEach(card => {
+    const hero = document.querySelector(".hero");
 
-            const cardRect = card.getBoundingClientRect();
+    const serviceCards =
+        document.querySelectorAll(".service-card");
 
-            const cardCenterX =
-                cardRect.left +
-                cardRect.width / 2 -
-                heroRect.left;
 
-            const cardCenterY =
-                cardRect.top +
-                cardRect.height / 2 -
-                heroRect.top;
+    if (hero && serviceCards.length) {
 
-            const distanceX =
-                mouseX - cardCenterX;
 
-            const distanceY =
-                mouseY - cardCenterY;
+        /* =================================================
+           MOUSE MOVEMENT
+        ================================================= */
 
-            const distance =
-                Math.sqrt(
-                    distanceX * distanceX +
-                    distanceY * distanceY
+        hero.addEventListener("mousemove", function (e) {
+
+            const heroRect =
+                hero.getBoundingClientRect();
+
+
+            /* Mouse position inside Hero */
+
+            const mouseX =
+                e.clientX - heroRect.left;
+
+            const mouseY =
+                e.clientY - heroRect.top;
+
+
+            /* Update every service card */
+
+            serviceCards.forEach(function (card) {
+
+                const cardRect =
+                    card.getBoundingClientRect();
+
+
+                /* Find center of card */
+
+                const cardCenterX =
+                    cardRect.left +
+                    cardRect.width / 2 -
+                    heroRect.left;
+
+                const cardCenterY =
+                    cardRect.top +
+                    cardRect.height / 2 -
+                    heroRect.top;
+
+
+                /* Distance from mouse to card */
+
+                const distanceX =
+                    mouseX - cardCenterX;
+
+                const distanceY =
+                    mouseY - cardCenterY;
+
+                const distance =
+                    Math.sqrt(
+                        distanceX * distanceX +
+                        distanceY * distanceY
+                    );
+
+
+                /* Cards closer to the mouse move more */
+
+                const influence =
+                    Math.max(
+                        0,
+                        1 - distance / 350
+                    );
+
+
+                /* Calculate movement */
+
+                const moveX =
+                    (
+                        (
+                            mouseX -
+                            heroRect.width / 2
+                        ) /
+                        heroRect.width
+                    ) *
+                    18 *
+                    influence;
+
+                const moveY =
+                    (
+                        (
+                            mouseY -
+                            heroRect.height / 2
+                        ) /
+                        heroRect.height
+                    ) *
+                    18 *
+                    influence;
+
+
+                /* Send movement values to CSS */
+
+                card.style.setProperty(
+                    "--mouse-x",
+                    `${moveX}px`
                 );
 
-            const influence =
-                Math.max(
-                    0,
-                    1 - distance / 350
+                card.style.setProperty(
+                    "--mouse-y",
+                    `${moveY}px`
                 );
 
-            const moveX =
-                ((mouseX - heroRect.width / 2) /
-                    heroRect.width) *
-                18 *
-                influence;
-
-            const moveY =
-                ((mouseY - heroRect.height / 2) /
-                    heroRect.height) *
-                18 *
-                influence;
-
-            card.style.setProperty(
-                "--mouse-x",
-                `${moveX}px`
-            );
-
-            card.style.setProperty(
-                "--mouse-y",
-                `${moveY}px`
-            );
+            });
 
         });
 
-    });
 
+        /* =================================================
+           RESET CARD POSITIONS
 
-    hero.addEventListener("mouseleave", function () {
+           Return cards to their original position when
+           the mouse leaves the Hero section.
+        ================================================= */
 
-        serviceCards.forEach(card => {
+        hero.addEventListener("mouseleave", function () {
 
-            card.style.setProperty(
-                "--mouse-x",
-                "0px"
-            );
+            serviceCards.forEach(function (card) {
 
-            card.style.setProperty(
-                "--mouse-y",
-                "0px"
-            );
+                card.style.setProperty(
+                    "--mouse-x",
+                    "0px"
+                );
+
+                card.style.setProperty(
+                    "--mouse-y",
+                    "0px"
+                );
+
+            });
 
         });
 
-    });
-
-}
+    }
 
 
-/* =========================================================
-   02. WHAT WE DO CAROUSEL
-   ========================================================= */
 
-const carousel =
-    document.querySelector(".services-carousel");
+    /* =====================================================
+       02. HERO SCROLL INDICATOR
 
-const track =
-    carousel?.querySelector(".services-track");
+       Hides the Hero scroll indicator after the user
+       scrolls down.
+    ===================================================== */
 
-const prevButton =
-    document.querySelector(".carousel-prev");
-
-const nextButton =
-    document.querySelector(".carousel-next");
-
-const dotsContainer =
-    document.getElementById("carouselDots");
+    const heroScrollIndicator =
+        document.querySelector(
+            ".header-scroll-indicator"
+        );
 
 
-if (carousel && track) {
+
+    /* =====================================================
+       03. MARQUEE VISIBILITY CONTROL
+
+       Pauses marquee animations when the browser tab is
+       hidden and resumes them when the user returns.
+    ===================================================== */
+
+    const marqueeTracks =
+        document.querySelectorAll(".marquee-track");
+
+
+    document.addEventListener(
+        "visibilitychange",
+        function () {
+
+            marqueeTracks.forEach(function (track) {
+
+                track.style.animationPlayState =
+                    document.hidden
+                        ? "paused"
+                        : "running";
+
+            });
+
+        }
+    );
+
+
+
+    /* =====================================================
+       04. WHAT WE DO CAROUSEL
+    ===================================================== */
+
+    const carousel =
+        document.querySelector(
+            ".what-we-do-carousel"
+        );
+
+    const track =
+        document.querySelector(
+            ".what-we-do-track"
+        );
+
+    const prevButton =
+        document.querySelector(
+            ".carousel-prev"
+        );
+
+    const nextButton =
+        document.querySelector(
+            ".carousel-next"
+        );
+
+    const dotsContainer =
+        document.querySelector(
+            ".carousel-dots"
+        );
 
     const originalCards =
         Array.from(
-            track.querySelectorAll(".what-we-do-card")
-        );
-
-    const originalCount =
-        originalCards.length;
-
-
-    const cardWidth = 450;
-    const gap = 18;
-
-    const slideDistance =
-        cardWidth + gap;
-
-    const slideDuration = 700;
-    const autoplayDelay = 3000;
-
-
-    let currentIndex =
-        originalCount;
-
-    let autoplay = null;
-
-
-    /* ---------------------------------------------------------
-       CLONE CARDS
-       --------------------------------------------------------- */
-
-    originalCards.forEach(card => {
-
-        const clone =
-            card.cloneNode(true);
-
-        clone.classList.add(
-            "carousel-clone"
-        );
-
-        track.insertBefore(
-            clone,
-            track.firstChild
-        );
-
-    });
-
-
-    originalCards.forEach(card => {
-
-        const clone =
-            card.cloneNode(true);
-
-        clone.classList.add(
-            "carousel-clone"
-        );
-
-        track.appendChild(clone);
-
-    });
-
-
-    const allCards =
-        Array.from(
-            track.querySelectorAll(
+            document.querySelectorAll(
                 ".what-we-do-card"
             )
         );
 
 
-    /* ---------------------------------------------------------
-       CREATE DOTS
-       --------------------------------------------------------- */
+    /* =====================================================
+       CAROUSEL SAFETY CHECK
+    ===================================================== */
 
-    originalCards.forEach(
-        (card, index) => {
+    if (
+        carousel &&
+        track &&
+        prevButton &&
+        nextButton &&
+        dotsContainer &&
+        originalCards.length
+    ) {
 
-            const dot =
-                document.createElement("button");
 
-            dot.classList.add(
-                "carousel-dot"
+        /* =================================================
+           CAROUSEL SETTINGS
+        ================================================= */
+
+        let currentIndex = 0;
+
+        let autoSlide;
+
+        let isMoving = false;
+
+        const slideSpeed = 600;
+
+        const autoSlideTime = 3000;
+
+
+
+        /* =================================================
+           CLONE CARDS
+
+           Original:
+           1 2 3 4
+
+           After cloning:
+           1 2 3 4 1 2 3 4
+
+           This allows the carousel to loop infinitely.
+        ================================================= */
+
+        originalCards.forEach(function (card) {
+
+            const clone =
+                card.cloneNode(true);
+
+            clone.classList.add(
+                "carousel-clone"
             );
 
-            dot.setAttribute(
-                "aria-label",
-                `Show card ${index + 1} in center`
+            track.appendChild(clone);
+
+        });
+
+
+
+        /* =================================================
+           GET ALL CARDS
+        ================================================= */
+
+        function getCards() {
+
+            return Array.from(
+                track.querySelectorAll(
+                    ".what-we-do-card"
+                )
             );
 
-            dot.addEventListener(
-                "click",
-                () => {
+        }
 
-                    goToSlide(index);
+
+
+        /* =================================================
+           GET GAP BETWEEN CARDS
+        ================================================= */
+
+        function getGap() {
+
+            const styles =
+                window.getComputedStyle(track);
+
+            return (
+                parseFloat(styles.columnGap) ||
+                parseFloat(styles.gap) ||
+                0
+            );
+
+        }
+
+
+
+        /* =================================================
+           GET CARD WIDTH
+        ================================================= */
+
+        function getCardWidth() {
+
+            const cards = getCards();
+
+            if (!cards.length) {
+                return 0;
+            }
+
+            return cards[0]
+                .getBoundingClientRect()
+                .width;
+
+        }
+
+
+
+        /* =================================================
+           GET TOTAL SLIDE WIDTH
+
+           Card width + gap.
+        ================================================= */
+
+        function getSlideWidth() {
+
+            return (
+                getCardWidth() +
+                getGap()
+            );
+
+        }
+
+
+
+        /* =================================================
+           CREATE NAVIGATION DOTS
+        ================================================= */
+
+        function createDots() {
+
+            dotsContainer.innerHTML = "";
+
+
+            originalCards.forEach(
+                function (card, index) {
+
+                    const dot =
+                        document.createElement(
+                            "button"
+                        );
+
+                    dot.type = "button";
+
+                    dot.classList.add(
+                        "carousel-dot"
+                    );
+
+
+                    /* Accessibility */
+
+                    dot.setAttribute(
+                        "aria-label",
+                        `Go to slide ${index + 1}`
+                    );
+
+
+                    /* First dot active */
+
+                    if (index === 0) {
+
+                        dot.classList.add(
+                            "active"
+                        );
+
+                    }
+
+
+                    /* Dot navigation */
+
+                    dot.addEventListener(
+                        "click",
+                        function () {
+
+                            if (isMoving) {
+                                return;
+                            }
+
+                            currentIndex = index;
+
+                            moveCarousel(true);
+
+                            restartAutoSlide();
+
+                        }
+                    );
+
+
+                    dotsContainer.appendChild(dot);
 
                 }
             );
 
-            dotsContainer.appendChild(dot);
-
-        }
-    );
-
-
-    const dots =
-        Array.from(
-            dotsContainer.querySelectorAll(
-                ".carousel-dot"
-            )
-        );
-
-
-    /* ---------------------------------------------------------
-       UPDATE DOTS
-       --------------------------------------------------------- */
-
-    function updateDots() {
-
-        let centerIndex =
-            currentIndex + 1;
-
-        let activeIndex =
-            (centerIndex - originalCount)
-            % originalCount;
-
-        if (activeIndex < 0) {
-
-            activeIndex += originalCount;
-
         }
 
-        dots.forEach(
-            (dot, index) => {
 
-                dot.classList.toggle(
-                    "active",
-                    index === activeIndex
+
+        /* =================================================
+           UPDATE ACTIVE DOT
+        ================================================= */
+
+        function updateDots() {
+
+            const dots =
+                dotsContainer.querySelectorAll(
+                    ".carousel-dot"
                 );
 
-            }
-        );
 
-    }
+            const activeIndex =
+                currentIndex %
+                originalCards.length;
 
 
-    /* ---------------------------------------------------------
-       UPDATE CARD POSITION CLASSES
-       --------------------------------------------------------- */
+            dots.forEach(
+                function (dot, index) {
 
-    function updatePositionClasses() {
+                    dot.classList.toggle(
+                        "active",
+                        index === activeIndex
+                    );
 
-        allCards.forEach(card => {
-
-            card.classList.remove(
-                "position-1",
-                "position-2",
-                "position-3"
+                }
             );
 
-        });
+        }
 
 
-        for (
-            let position = 0;
-            position < 3;
-            position++
+
+        /* =================================================
+           MOVE CAROUSEL
+        ================================================= */
+
+        function moveCarousel(
+            animate = true
         ) {
 
-            const index =
-                currentIndex + position;
+            const slideWidth =
+                getSlideWidth();
 
-            if (allCards[index]) {
 
-                allCards[index].classList.add(
-                    `position-${position + 1}`
-                );
-
+            if (!slideWidth) {
+                return;
             }
 
-        }
 
-    }
+            const moveAmount =
+                currentIndex *
+                slideWidth;
 
-
-    /* ---------------------------------------------------------
-       MOVE CAROUSEL
-       --------------------------------------------------------- */
-
-    function moveCarousel(
-        animate = true
-    ) {
-
-        if (animate) {
 
             track.style.transition =
-                `transform ${slideDuration}ms
-                 cubic-bezier(.4, 0, .2, 1)`;
+                animate
+                    ? `transform ${slideSpeed}ms cubic-bezier(0.22, 1, 0.36, 1)`
+                    : "none";
 
-        } else {
 
-            track.style.transition =
-                "none";
+            track.style.transform =
+                `translate3d(-${moveAmount}px, 0, 0)`;
+
+
+            updateDots();
 
         }
 
 
-        track.style.transform =
-            `translateX(
-                -${currentIndex * slideDistance}px
-            )`;
+
+        /* =================================================
+           NEXT SLIDE
+        ================================================= */
+
+        function nextSlide() {
+
+            if (isMoving) {
+                return;
+            }
 
 
-        updatePositionClasses();
-        updateDots();
+            isMoving = true;
 
-    }
+            currentIndex++;
 
-
-    /* ---------------------------------------------------------
-       NEXT
-       --------------------------------------------------------- */
-
-    function nextSlide() {
-
-        currentIndex++;
-
-        moveCarousel(true);
+            moveCarousel(true);
 
 
-        if (
-            currentIndex >=
-            originalCount * 2
-        ) {
+            /* Reset after reaching cloned cards */
 
-            setTimeout(() => {
+            setTimeout(function () {
+
+                if (
+                    currentIndex >=
+                    originalCards.length
+                ) {
+
+                    currentIndex = 0;
+
+                    moveCarousel(false);
+
+                }
+
+                isMoving = false;
+
+            }, slideSpeed);
+
+        }
+
+
+
+        /* =================================================
+           PREVIOUS SLIDE
+        ================================================= */
+
+        function previousSlide() {
+
+            if (isMoving) {
+                return;
+            }
+
+
+            isMoving = true;
+
+
+            /* If at first card, jump to clone section */
+
+            if (currentIndex === 0) {
 
                 currentIndex =
-                    originalCount;
+                    originalCards.length;
 
                 moveCarousel(false);
 
-            }, slideDuration);
 
-        }
+                requestAnimationFrame(function () {
 
-    }
+                    requestAnimationFrame(function () {
 
+                        currentIndex--;
 
-    /* ---------------------------------------------------------
-       PREVIOUS
-       --------------------------------------------------------- */
+                        moveCarousel(true);
 
-    function previousSlide() {
 
-        currentIndex--;
+                        setTimeout(function () {
 
-        moveCarousel(true);
+                            isMoving = false;
 
+                        }, slideSpeed);
 
-        if (
-            currentIndex < originalCount
-        ) {
+                    });
 
-            setTimeout(() => {
-
-                currentIndex =
-                    originalCount * 2 - 1;
-
-                moveCarousel(false);
-
-            }, slideDuration);
-
-        }
-
-    }
-
-
-    /* ---------------------------------------------------------
-       GO TO SLIDE
-       --------------------------------------------------------- */
-
-    function goToSlide(index) {
-
-        currentIndex =
-            originalCount + index - 1;
-
-
-        if (currentIndex < 0) {
-
-            currentIndex =
-                originalCount - 1;
-
-        }
-
-
-        moveCarousel(true);
-
-        startAutoplay();
-
-    }
-
-
-    /* ---------------------------------------------------------
-       AUTOPLAY
-       --------------------------------------------------------- */
-
-    function startAutoplay() {
-
-        stopAutoplay();
-
-        autoplay =
-            setInterval(
-                nextSlide,
-                autoplayDelay
-            );
-
-    }
-
-
-    function stopAutoplay() {
-
-        if (autoplay !== null) {
-
-            clearInterval(autoplay);
-
-            autoplay = null;
-
-        }
-
-    }
-
-
-    /* ---------------------------------------------------------
-       BUTTONS
-       --------------------------------------------------------- */
-
-    if (nextButton) {
-
-        nextButton.addEventListener(
-            "click",
-            () => {
-
-                nextSlide();
-
-                startAutoplay();
-
-            }
-        );
-
-    }
-
-
-    if (prevButton) {
-
-        prevButton.addEventListener(
-            "click",
-            () => {
-
-                previousSlide();
-
-                startAutoplay();
-
-            }
-        );
-
-    }
-
-
-    /* ---------------------------------------------------------
-       PAUSE ON HOVER
-       --------------------------------------------------------- */
-
-    carousel.addEventListener(
-        "mouseenter",
-        stopAutoplay
-    );
-
-
-    carousel.addEventListener(
-        "mouseleave",
-        startAutoplay
-    );
-
-
-    /* ---------------------------------------------------------
-       INITIALIZE
-       --------------------------------------------------------- */
-
-    moveCarousel(false);
-
-    startAutoplay();
-
-}
-
-
-/* =========================================================
-   03. HERO SCROLL INDICATOR
-   ========================================================= */
-
-const scrollIndicator =
-    document.querySelector(
-        ".hero-scroll-indicator"
-    );
-
-
-if (scrollIndicator) {
-
-    window.addEventListener(
-        "scroll",
-        () => {
-
-            if (window.scrollY > 30) {
-
-                scrollIndicator.classList.add(
-                    "hidden"
-                );
+                });
 
             } else {
 
-                scrollIndicator.classList.remove(
-                    "hidden"
-                );
+                currentIndex--;
+
+                moveCarousel(true);
+
+
+                setTimeout(function () {
+
+                    isMoving = false;
+
+                }, slideSpeed);
 
             }
 
         }
+
+
+
+        /* =================================================
+           CAROUSEL BUTTONS
+        ================================================= */
+
+        nextButton.addEventListener(
+            "click",
+            function () {
+
+                nextSlide();
+
+                restartAutoSlide();
+
+            }
+        );
+
+
+        prevButton.addEventListener(
+            "click",
+            function () {
+
+                previousSlide();
+
+                restartAutoSlide();
+
+            }
+        );
+
+
+
+        /* =================================================
+           AUTOMATIC SLIDING
+        ================================================= */
+
+        function startAutoSlide() {
+
+            clearInterval(autoSlide);
+
+            autoSlide =
+                setInterval(
+                    nextSlide,
+                    autoSlideTime
+                );
+
+        }
+
+
+
+        /* =================================================
+           RESTART AUTOMATIC SLIDING
+        ================================================= */
+
+        function restartAutoSlide() {
+
+            startAutoSlide();
+
+        }
+
+
+
+        /* =================================================
+           PAUSE ON HOVER
+        ================================================= */
+
+        carousel.addEventListener(
+            "mouseenter",
+            function () {
+
+                clearInterval(autoSlide);
+
+            }
+        );
+
+
+        carousel.addEventListener(
+            "mouseleave",
+            function () {
+
+                startAutoSlide();
+
+            }
+        );
+
+
+
+        /* =================================================
+           PAUSE WHEN TAB IS HIDDEN
+        ================================================= */
+
+        document.addEventListener(
+            "visibilitychange",
+            function () {
+
+                if (document.hidden) {
+
+                    clearInterval(autoSlide);
+
+                } else {
+
+                    startAutoSlide();
+
+                }
+
+            }
+        );
+
+
+
+        /* =================================================
+           WINDOW RESIZE
+
+           Recalculate the carousel because card widths may
+           change when the screen size changes.
+        ================================================= */
+
+        let resizeTimer;
+
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                clearTimeout(resizeTimer);
+
+                resizeTimer =
+                    setTimeout(function () {
+
+                        currentIndex = 0;
+
+                        moveCarousel(false);
+
+                        restartAutoSlide();
+
+                    }, 150);
+
+            }
+        );
+
+
+
+        /* =================================================
+           INITIALIZE CAROUSEL
+        ================================================= */
+
+        createDots();
+
+        moveCarousel(false);
+
+        startAutoSlide();
+
+    }
+
+
+
+    /* =====================================================
+       05. MAIN + FEATURED SCROLL SYSTEM
+    ===================================================== */
+
+    const mainSection =
+        document.querySelector("main");
+
+    const featured =
+        document.querySelector(".featured");
+
+
+    /* =====================================================
+       UPDATE SCROLL ANIMATIONS
+    ===================================================== */
+
+    function updateScrollAnimations() {
+
+
+        const scrollY =
+            window.scrollY;
+
+        const screenHeight =
+            window.innerHeight;
+
+
+
+        /* =================================================
+           HERO SCROLL INDICATOR
+        ================================================= */
+
+        if (heroScrollIndicator) {
+
+            heroScrollIndicator.classList.toggle(
+                "hidden",
+                scrollY > 30
+            );
+
+        }
+
+
+
+        /* =================================================
+           MAIN SECTION MOVEMENT
+
+           From:
+           0vh → 100vh
+
+           Main moves:
+           0px → -100vh
+        ================================================= */
+
+        if (mainSection) {
+
+            let mainProgress =
+                scrollY / screenHeight;
+
+
+            /* Keep progress between 0 and 1 */
+
+            mainProgress =
+                Math.max(
+                    0,
+                    Math.min(
+                        mainProgress,
+                        1
+                    )
+                );
+
+
+            const mainY =
+                -mainProgress *
+                screenHeight;
+
+
+            mainSection.style.transform =
+                `translate3d(0, ${mainY}px, 0)`;
+
+        }
+
+
+
+        /* =================================================
+           FEATURED SECTION MOVEMENT
+
+           Starts at:
+           130vh
+
+           Ends at:
+           230vh
+
+           Featured moves:
+           -100% → 0%
+        ================================================= */
+
+        if (featured) {
+
+            const featuredStart =
+                screenHeight * 1.3;
+
+            const featuredEnd =
+                screenHeight * 2.3;
+
+
+            let featuredProgress =
+                (
+                    scrollY -
+                    featuredStart
+                ) /
+                (
+                    featuredEnd -
+                    featuredStart
+                );
+
+
+            /* Keep progress between 0 and 1 */
+
+            featuredProgress =
+                Math.max(
+                    0,
+                    Math.min(
+                        featuredProgress,
+                        1
+                    )
+                );
+
+
+            const featuredX =
+                -100 +
+                featuredProgress * 100;
+
+
+            featured.style.transform =
+                `translate3d(${featuredX}%, 0, 0)`;
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       OPTIMIZED SCROLL EVENT
+
+       requestAnimationFrame prevents excessive animation
+       calculations during scrolling.
+    ===================================================== */
+
+    let scrollTicking = false;
+
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            if (scrollTicking) {
+                return;
+            }
+
+
+            scrollTicking = true;
+
+
+            window.requestAnimationFrame(
+                function () {
+
+                    updateScrollAnimations();
+
+                    scrollTicking = false;
+
+                }
+            );
+
+        },
+        {
+            passive: true
+        }
     );
+
+
+
+    /* =====================================================
+       RESIZE EVENT
+    ===================================================== */
+
+    window.addEventListener(
+        "resize",
+        updateScrollAnimations
+    );
+
+
+
+    /* =====================================================
+       INITIALIZE SCROLL SYSTEM
+    ===================================================== */
+
+    updateScrollAnimations();
 
 }
 
 
+
 /* =========================================================
-   04. MARQUEE VISIBILITY CONTROL
-   ========================================================= */
+   START WEBSITE
 
-document.addEventListener(
-    "visibilitychange",
-    function () {
+   If the DOM is still loading, wait until it is ready.
 
-        const marqueeTracks =
-            document.querySelectorAll(
-                ".marquee-track"
-            );
+   Otherwise, start the website immediately.
+========================================================= */
 
+if (
+    document.readyState === "loading"
+) {
 
-        marqueeTracks.forEach(track => {
+    document.addEventListener(
+        "DOMContentLoaded",
+        initializeWebsite
+    );
 
-            track.style.animationPlayState =
-                document.hidden
-                    ? "paused"
-                    : "running";
+} else {
 
-        });
+    initializeWebsite();
 
-    }
-);
+}

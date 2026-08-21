@@ -1,0 +1,1499 @@
+/* =========================================================
+   DYLAN STUDIOS
+   HERO / WHAT WE DO SECTION
+========================================================= */
+
+
+/* =========================================================
+   INDEX
+
+   01. HERO STATS
+       01.1 Stats Heading
+       01.2 Stats Row
+       01.3 Stat Item
+       01.4 Stat Hover
+       01.5 Stat Icon
+       01.6 Material Symbol
+       01.7 Stat Number
+       01.8 Stat Label
+       01.9 Stat Colors
+       01.10 Stat Dividers
+       01.11 Responsive Stats
+
+   02. WHAT WE DO INTRO
+       02.1 Section Label
+       02.2 Decorative Lines
+       02.3 Main Heading
+       02.4 Description
+       02.5 Responsive Intro
+
+   03. WHAT WE DO CAROUSEL
+       03.1 Carousel Container
+       03.2 Carousel Viewport
+       03.3 Carousel Track
+       03.4 Service Card
+       03.5 Card Hover
+       03.6 Card Content
+       03.7 Card Header
+       03.8 Card Icon
+       03.9 Card Title
+       03.10 Card Description
+       03.11 Card Side
+       03.12 Card Number
+       03.13 Color Strip
+       03.14 Blue Cards
+       03.15 Yellow Cards
+       03.16 Pink Cards
+       03.17 Carousel Arrows
+       03.18 Carousel Dots
+       03.19 Responsive Carousel
+
+   04. STUDIO TAGLINE
+       04.1 Tagline Text
+       04.2 Highlight Color
+       04.3 Responsive Tagline
+========================================================= */
+
+
+
+/* =========================================================
+   01. HERO STATS
+========================================================= */
+
+.hero-stats {
+
+    /* Prevent the stats section from becoming too wide */
+    width: min(100%, 1100px);
+
+    /* Center the stats section horizontally */
+    margin: 0 auto;
+
+    /* Center text inside the section */
+    text-align: center;
+
+}
+
+
+
+/* =========================================================
+   01.1 STATS HEADING
+========================================================= */
+
+.stats-heading {
+
+    /* Small space below the heading */
+    margin-bottom: 5px;
+
+    /* Dylan Studios display font */
+    font-family: "Cinzel", serif;
+
+    /* Heading size */
+    font-size: 28px;
+
+    font-weight: 700;
+
+    /* Increase spacing between letters */
+    letter-spacing: 3px;
+
+    /* Muted heading color */
+    color: #64748B;
+
+    /* Keep heading visually consistent */
+    text-transform: uppercase;
+
+}
+
+
+
+/* =========================================================
+   01.2 STATS ROW
+========================================================= */
+
+.stats-row {
+
+    /* Place all statistic cards in one row */
+    display: flex;
+
+    /* Make all cards stretch to equal height */
+    align-items: stretch;
+
+    /* Center the cards */
+    justify-content: center;
+
+    /* Space between cards */
+    gap: 18px;
+
+}
+
+
+
+/* =========================================================
+   01.3 STAT ITEM
+========================================================= */
+
+.stat-item {
+
+    /* Allow each card to take equal available space */
+    flex: 1;
+
+    /* Prevent cards from becoming too narrow */
+    min-width: 180px;
+
+    /* Stack icon, number, and label vertically */
+    display: flex;
+    flex-direction: column;
+
+    /* Center all content */
+    align-items: center;
+    justify-content: center;
+
+    /* Internal spacing */
+    padding: 15px 25px;
+
+    /* Card appearance */
+    background: #FFFFFF;
+
+    border: 2px solid #0097B2;
+
+    border-radius: 18px;
+
+    /* Soft elevation */
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.08);
+
+    /* Smooth hover animation */
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+
+/* =========================================================
+   01.4 STAT HOVER
+========================================================= */
+
+.stat-item:hover {
+
+    /* Lift the card slightly */
+    transform: translateY(-6px);
+
+    /* Increase shadow to create elevation */
+    box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.14);
+
+}
+
+
+
+/* =========================================================
+   01.5 STAT ICON
+========================================================= */
+
+.stat-icon {
+
+    /* Fixed icon area for consistent alignment */
+    width: 58px;
+    height: 58px;
+
+    /* Space between icon and number */
+    margin-bottom: 8px;
+
+    /* Center the Material Symbol */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+/* =========================================================
+   01.6 MATERIAL SYMBOL
+========================================================= */
+
+.stat-icon .material-symbols-outlined {
+
+    /* Material Symbols font */
+    font-family: "Material Symbols Outlined";
+
+    font-size: 46px;
+
+    line-height: 1;
+
+    /* Configure Material Symbol appearance */
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 500,
+        'GRAD' 0,
+        'opsz' 48;
+
+}
+
+
+
+/* =========================================================
+   01.7 STAT NUMBER
+========================================================= */
+
+.stat-item strong {
+
+    /* Display font used for large statistic number */
+    font-family: "Cinzel", serif;
+
+    font-size: 45px;
+
+    font-weight: 700;
+
+    /* Remove unnecessary vertical spacing */
+    line-height: 1;
+
+}
+
+
+
+/* =========================================================
+   01.8 STAT LABEL
+========================================================= */
+
+.stat-item>span:not(.material-symbols-outlined) {
+
+    /*
+       Targets the text label directly inside .stat-item.
+
+       It does not affect the Material Symbol icon.
+    */
+
+    margin-top: 8px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #334155;
+
+    text-align: center;
+
+    /* Prevent the label from wrapping */
+    white-space: nowrap;
+
+}
+
+
+
+/* =========================================================
+   01.9 STAT COLORS
+========================================================= */
+
+
+/* Projects statistic */
+
+.projects-stat strong,
+.projects-stat .stat-icon {
+
+    color: #0097B2;
+
+}
+
+
+/* Domains statistic */
+
+.domains-stat strong,
+.domains-stat .stat-icon {
+
+    color: #FAD02C;
+
+}
+
+
+/* Passion statistic */
+
+.passion-stat strong,
+.passion-stat .stat-icon {
+
+    color: #FF79B3;
+
+}
+
+
+
+/* =========================================================
+   01.10 STAT DIVIDERS
+========================================================= */
+
+.stat-divider {
+
+    /*
+       Divider is currently disabled.
+
+       You can remove this block entirely if
+       .stat-divider is not used in your HTML.
+    */
+
+    display: none;
+
+}
+
+
+
+/* =========================================================
+   01.11 RESPONSIVE STATS
+========================================================= */
+
+
+/* Tablet and smaller */
+
+@media (max-width: 768px) {
+
+    .hero-stats {
+
+        /* Add horizontal breathing space */
+        padding: 30px 20px;
+
+    }
+
+
+    .stats-row {
+
+        /* Stack statistic cards vertically */
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+    .stat-item {
+
+        /* Make cards responsive */
+        width: 100%;
+
+        /* Prevent cards from becoming excessively wide */
+        max-width: 400px;
+
+        min-width: unset;
+
+    }
+
+
+    .stat-icon .material-symbols-outlined {
+
+        font-size: 42px;
+
+    }
+
+
+    .stat-item strong {
+
+        font-size: 46px;
+
+    }
+
+}
+
+
+/* Small mobile devices */
+
+@media (max-width: 480px) {
+
+    .hero-stats {
+
+        padding: 25px 15px;
+
+    }
+
+
+    .stat-item {
+
+        padding: 25px 20px;
+
+    }
+
+
+    .stats-heading {
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .stat-item strong {
+
+        font-size: 42px;
+
+    }
+
+
+    .stat-item>span:not(.material-symbols-outlined) {
+
+        font-size: 11px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   02. WHAT WE DO INTRO
+========================================================= */
+
+.what-we-do-intro {
+
+    width: 100%;
+
+    /* Space between the previous section and intro */
+    padding-top: 18px;
+
+    /* Stack label, heading, and description */
+    display: flex;
+    flex-direction: column;
+
+    /* Center all content */
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+
+/* =========================================================
+   02.1 SECTION LABEL
+========================================================= */
+
+.what-we-do-label {
+
+    /* Place decorative lines and text horizontally */
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+/* =========================================================
+   02.2 LABEL TEXT
+========================================================= */
+
+.what-we-do-label>span:not(.label-dot) {
+
+    /*
+       Targets the label text while avoiding any
+       decorative element using the .label-dot class.
+    */
+
+    font-family: "Cinzel", serif;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    color: #0097B2;
+
+    white-space: nowrap;
+
+}
+
+
+
+/* =========================================================
+   02.3 DECORATIVE LINES
+========================================================= */
+
+.label-lines {
+
+    /* Place the three decorative lines in one row */
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+/* Base style for all decorative lines */
+
+.label-lines span {
+
+    display: block;
+
+    height: 5px;
+    width: 15px;
+
+    /* Rounded pill shape */
+    border-radius: 10px;
+
+}
+
+
+/* Blue line */
+
+.label-lines span:nth-child(1) {
+
+    background: #0097B2;
+
+}
+
+
+/* Pink line */
+
+.label-lines span:nth-child(2) {
+
+    background: #FF79B3;
+
+}
+
+
+/* Yellow line */
+
+.label-lines span:nth-child(3) {
+
+    background: #FAD02C;
+
+}
+
+
+
+/* =========================================================
+   02.4 MAIN HEADING
+========================================================= */
+
+.what-we-do-intro h2 {
+
+    margin-bottom: 1px;
+
+    font-family: "Cinzel", serif;
+
+    /*
+       Responsive font size.
+
+       Minimum: 30px
+       Preferred: 4vw
+       Maximum: 38px
+    */
+    font-size: clamp(30px, 4vw, 38px);
+
+    font-weight: 500;
+
+    line-height: 1.15;
+
+    color: #1F334D;
+
+}
+
+
+/* Highlighted word inside the heading */
+
+.what-we-do-intro h2 span {
+
+    color: #0097B2;
+
+}
+
+
+
+/* =========================================================
+   02.5 DESCRIPTION
+========================================================= */
+
+.what-we-do-intro p {
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 20px;
+
+    color: #000000;
+
+}
+
+
+
+/* =========================================================
+   02.6 RESPONSIVE INTRO
+========================================================= */
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .what-we-do-intro {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .what-we-do-label {
+
+        gap: 7px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .what-we-do-label>span:not(.label-dot) {
+
+        font-size: 11px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .label-lines span:nth-child(1) {
+
+        width: 18px;
+
+    }
+
+
+    .what-we-do-intro h2 {
+
+        font-size: 36px;
+
+    }
+
+
+    .what-we-do-intro p {
+
+        font-size: 15px;
+
+        line-height: 1.6;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   03. WHAT WE DO CAROUSEL
+========================================================= */
+
+.what-we-do-carousel {
+
+    /*
+       Allows carousel arrows or future elements
+       to be positioned relative to this container.
+    */
+    position: relative;
+
+    width: 100%;
+
+    /* Place arrows and viewport horizontally */
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 20px;
+
+}
+
+
+
+/* =========================================================
+   03.1 CAROUSEL VIEWPORT
+========================================================= */
+
+.carousel-viewport {
+
+    width: 100%;
+
+    /*
+       Hide cards that move outside the visible
+       carousel area.
+    */
+    overflow: hidden;
+
+}
+
+
+
+/* =========================================================
+   03.2 CAROUSEL TRACK
+========================================================= */
+
+.what-we-do-track {
+
+    /* Place all cards in a single horizontal row */
+    display: flex;
+
+    flex-wrap: nowrap;
+
+    gap: 20px;
+
+    /*
+       Make the track exactly as wide as all
+       its cards combined.
+    */
+    width: max-content;
+
+    /* Smooth movement when JavaScript changes transform */
+    transition:
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Hint to the browser that transform will change */
+    will-change: transform;
+
+}
+
+
+
+/* =========================================================
+   03.3 WHAT WE DO CARD
+========================================================= */
+
+.what-we-do-card {
+
+    /*
+       Show approximately four cards on larger screens.
+       The width adjusts based on viewport size.
+    */
+    flex: 0 0 calc((100vw - 180px) / 4);
+
+    max-width: 400px;
+
+    /* Keep every service card the same height */
+    height: 220px;
+
+    /* Place main content and side panel horizontally */
+    display: flex;
+
+    justify-content: space-between;
+
+    /* Keep internal decorative elements inside the card */
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 3px solid #0057B8;
+
+    border-radius: 18px;
+
+    /* Creates a glass-like effect */
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+
+/* =========================================================
+   03.4 CARD HOVER
+========================================================= */
+
+.what-we-do-card:hover {
+
+    /* Lift card on hover */
+    transform: translateY(-8px);
+
+    /* Strengthen shadow */
+    box-shadow:
+        0 20px 45px rgba(15, 23, 42, 0.14);
+
+}
+
+
+
+/* =========================================================
+   03.5 CARD CONTENT
+========================================================= */
+
+.what-we-do-content {
+
+    /*
+       Take all remaining space except
+       the side information panel.
+    */
+    flex: 1;
+
+    /*
+       Allows text to shrink properly inside
+       a flex container.
+    */
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 25px 18px 25px 25px;
+
+}
+
+
+
+/* =========================================================
+   03.6 ICON + TITLE ROW
+========================================================= */
+
+.what-we-do-card-header {
+
+    /* Place icon and service title together */
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+/* =========================================================
+   03.7 CARD ICON
+========================================================= */
+
+.what-we-do-icon {
+
+    /* Fixed circular icon area */
+    width: 52px;
+    height: 52px;
+
+    /* Prevent icon from shrinking */
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 8px 18px rgba(15, 23, 42, 0.10);
+
+}
+
+
+/* Material Symbol inside the service icon */
+
+.what-we-do-icon .material-symbols-outlined {
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 500,
+        'GRAD' 0,
+        'opsz' 48;
+
+}
+
+
+
+/* =========================================================
+   03.8 CARD TITLE
+========================================================= */
+
+.what-we-do-card h3 {
+
+    margin: 0;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    color: #111827;
+
+}
+
+
+
+/* =========================================================
+   03.9 CARD DESCRIPTION
+========================================================= */
+
+.what-we-do-card p {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: #000000;
+
+}
+
+
+
+/* =========================================================
+   03.10 CARD SIDE
+========================================================= */
+
+.what-we-do-side {
+
+    /* Fixed width for card number and color strip */
+    width: 58px;
+
+    flex-shrink: 0;
+
+    /* Stack number and color strip vertically */
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    /* Push number to top and strip to bottom */
+    justify-content: space-between;
+
+}
+
+
+
+/* =========================================================
+   03.11 CARD NUMBER
+========================================================= */
+
+.what-we-do-number {
+
+    padding-top: 20px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+}
+
+
+
+/* =========================================================
+   03.12 COLOR STRIP
+========================================================= */
+
+.what-we-do-color {
+
+    /* Fill the width of the side panel */
+    width: 100%;
+
+    height: 7px;
+
+    flex-shrink: 0;
+
+}
+
+
+
+/* =========================================================
+   03.13 BLUE CARDS
+   CARD 01 / CARD 04
+========================================================= */
+
+.card-blue {
+
+    border-color: #0057B8;
+
+}
+
+
+.card-blue .what-we-do-icon {
+
+    background: rgba(0, 87, 184, 0.12);
+
+    color: #0057B8;
+
+}
+
+
+.card-blue .what-we-do-side {
+
+    background:
+        linear-gradient(180deg,
+            rgba(0, 87, 184, 0.14),
+            rgba(0, 87, 184, 0.04));
+
+}
+
+
+.card-blue .what-we-do-number {
+
+    color: rgba(0, 87, 184, 0.65);
+
+}
+
+
+.card-blue .what-we-do-color {
+
+    background: #0057B8;
+
+}
+
+
+
+/* =========================================================
+   03.14 YELLOW CARDS
+   CARD 02 / CARD 05
+========================================================= */
+
+.card-yellow {
+
+    border-color: #FAD02C;
+
+}
+
+
+.card-yellow .what-we-do-icon {
+
+    background: rgba(250, 208, 44, 0.20);
+
+    color: #C99700;
+
+}
+
+
+.card-yellow .what-we-do-side {
+
+    background:
+        linear-gradient(180deg,
+            rgba(250, 208, 44, 0.20),
+            rgba(250, 208, 44, 0.05));
+
+}
+
+
+.card-yellow .what-we-do-number {
+
+    color: rgba(201, 151, 0, 0.75);
+
+}
+
+
+.card-yellow .what-we-do-color {
+
+    background: #FAD02C;
+
+}
+
+
+
+/* =========================================================
+   03.15 PINK CARDS
+   CARD 03 / CARD 06
+========================================================= */
+
+.card-pink {
+
+    border-color: #FF79B3;
+
+}
+
+
+.card-pink .what-we-do-icon {
+
+    background: rgba(255, 121, 179, 0.16);
+
+    color: #FF79B3;
+
+}
+
+
+.card-pink .what-we-do-side {
+
+    background:
+        linear-gradient(180deg,
+            rgba(255, 121, 179, 0.16),
+            rgba(255, 121, 179, 0.04));
+
+}
+
+
+.card-pink .what-we-do-number {
+
+    color: rgba(255, 121, 179, 0.80);
+
+}
+
+
+.card-pink .what-we-do-color {
+
+    background: #FF79B3;
+
+}
+
+
+
+/* =========================================================
+   03.16 CAROUSEL ARROWS
+========================================================= */
+
+.carousel-arrow {
+
+    /* Circular arrow button size */
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 87, 184, 0.2);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    color: #0057B8;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    /*
+       Keep arrows above the carousel content
+       if elements overlap.
+    */
+    z-index: 5;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.carousel-arrow:hover {
+
+    background: #0057B8;
+
+    color: #FFFFFF;
+
+    transform: scale(1.08);
+
+}
+
+
+.carousel-arrow:active {
+
+    /* Small press effect */
+    transform: scale(0.95);
+
+}
+
+
+
+/* =========================================================
+   03.17 CAROUSEL DOTS
+========================================================= */
+
+.carousel-dots {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+}
+
+
+.carousel-dot {
+
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(0, 87, 184, 0.25);
+
+    cursor: pointer;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+/* Active slide indicator */
+
+.carousel-dot.active {
+
+    /* Stretch active dot into a pill */
+    width: 30px;
+
+    border-radius: 20px;
+
+    background: #0057B8;
+
+}
+
+
+
+/* =========================================================
+   03.18 RESPONSIVE CAROUSEL
+========================================================= */
+
+
+/* Tablet: show approximately two cards */
+
+@media (max-width: 1000px) {
+
+    .what-we-do-card {
+
+        flex: 0 0 calc((100vw - 150px) / 2);
+
+        max-width: none;
+
+    }
+
+}
+
+
+/* Mobile: show one card */
+
+@media (max-width: 650px) {
+
+    .what-we-do-carousel {
+
+        gap: 8px;
+
+    }
+
+
+    .what-we-do-card {
+
+        /* Each card fills the carousel viewport */
+        flex: 0 0 100%;
+
+        min-width: 100%;
+
+        height: 220px;
+
+    }
+
+
+    .carousel-arrow {
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+
+    }
+
+
+    .what-we-do-content {
+
+        padding: 22px 12px 22px 20px;
+
+    }
+
+
+    .what-we-do-card-header {
+
+        gap: 12px;
+
+        margin-bottom: 16px;
+
+    }
+
+
+    .what-we-do-icon {
+
+        width: 46px;
+        height: 46px;
+
+    }
+
+
+    .what-we-do-icon .material-symbols-outlined {
+
+        font-size: 26px;
+
+    }
+
+
+    .what-we-do-card h3 {
+
+        font-size: 17px;
+
+    }
+
+
+    .what-we-do-card p {
+
+        font-size: 13px;
+
+        line-height: 1.5;
+
+    }
+
+
+    .what-we-do-side {
+
+        width: 50px;
+
+    }
+
+
+    .what-we-do-number {
+
+        font-size: 24px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   04. STUDIO TAGLINE
+========================================================= */
+
+.studio-tagline {
+
+    /* Center the tagline below the section */
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+}
+
+
+
+/* =========================================================
+   04.1 TAGLINE TEXT
+========================================================= */
+
+.studio-tagline p {
+
+    margin: 0;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 20px;
+
+    /* Give the tagline a quote-like style */
+    font-style: italic;
+
+    letter-spacing: 0.5px;
+
+    color: #2E3D50;
+
+}
+
+
+
+/* =========================================================
+   04.2 HIGHLIGHT COLOR
+========================================================= */
+
+.studio-tagline p span {
+
+    /* Highlight important word or phrase */
+    color: #1687A7;
+
+    font-weight: 700;
+
+}
+
+
+
+/* =========================================================
+   04.3 RESPONSIVE TAGLINE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .studio-tagline {
+
+        margin-top: 20px;
+
+    }
+
+
+    .studio-tagline p {
+
+        font-size: 16px;
+
+    }
+
+
+    /*
+       These two classes are only needed if
+       they exist in your HTML.
+    */
+
+    .tagline-line {
+
+        width: 25px;
+
+    }
+
+
+    .tagline-decoration {
+
+        gap: 9px;
+
+        margin-bottom: 14px;
+
+    }
+
+}
